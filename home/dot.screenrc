@@ -1,0 +1,9 @@
+defscrollback 10000
+
+screen screen
+screen -t ncmpc ncmpcpp
+screen -t htop htop
+screen -t rtorrent rtorrent
+screen -t irssi irssi -c utf.rusnet.org.ru -p 7770 -n part1zan_
+screen -t ttytter /home/che/projects/ttytter/ttytter.pl -ansi
+screen -t shell
