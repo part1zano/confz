@@ -2,6 +2,22 @@
 #
 use strict;
 use Irssi;
+eval 
+{
+	require Config::Simple;
+	Config::Simple -> import();
+	my $config = "./mpdscript.ini";
+	my $cnf = new Config::Simple();
+	$cnf -> read($config);
+	my %cfg = $cnf -> vars();
+	my $mpdhost = $cfg{'common.mpdhost'};
+	my $mpdport = $cfg{'common.mpdport'};
+}
+or do 
+{
+	my $mpdhost = '127.0.0.1';
+	my $mpdport = '6000';
+}
 use vars qw($VERSION %IRSSI);
 $VERSION = "0.00001";
 %IRSSI = {
@@ -172,3 +188,5 @@ if ($which_mpc . "A" eq "A")
 {
 	Irssi::print("mpc not found!");
 }
+system("export MPD_HOST='$mpdhost'");
+system("export MPD_PORT='$mpdport'");
