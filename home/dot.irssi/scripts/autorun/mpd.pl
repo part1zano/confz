@@ -9,7 +9,7 @@ $VERSION = "0.00001";
     contact     => '',
     name        => 'mpd',
     description => 'Control your mpd with irssi',
-    license     => 'Public Domain',
+    license     => 'LGPL',
     changed     => '2008-12-19 11:07'
 };
 

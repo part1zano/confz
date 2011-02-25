@@ -27,8 +27,8 @@ $VERSION = "0.6.1";
 );
 
 
-my $ident_name = "part1zan_";
-my $password   = "fgihad5";
+my $ident_name = "me";
+my $password   = "";
 my $fmt = "MSGLEVEL_CLIENTNOTICES";
 
 sub server_event_catch {
