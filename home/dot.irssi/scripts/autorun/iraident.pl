@@ -13,7 +13,26 @@ use strict;
 use Irssi;
 
 use vars qw($VERSION %IRSSI);                                                                                 
-                                                                                                              
+
+# config
+eval 
+{
+	require Config::Simple;
+	Config::Simple -> import();
+	my $config = "./iraident.ini";
+	my $cnf = new Config::Simple();
+	$cnf -> read($config);
+	my %cfg = $cnf -> vars();
+	my $ident_name = $cfg{'identification.login'};
+	my $password = $cfg{'identification.password'};
+}
+or do 
+{
+	my $ident_name = 'mr_Anonymous';
+	my $password = '111';
+}
+
+
 $VERSION = "0.6.1";                                                                                        
 %IRSSI = (                                                                                                    
     authors     => "DonRumata",                                                                 
@@ -27,8 +46,8 @@ $VERSION = "0.6.1";
 );
 
 
-my $ident_name = "me";
-my $password   = "";
+# my $ident_name = "me"; # we read this shti from config
+# my $password   = ""; # we read this shti from config
 my $fmt = "MSGLEVEL_CLIENTNOTICES";
 
 sub server_event_catch {
