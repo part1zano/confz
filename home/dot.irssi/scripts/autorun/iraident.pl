@@ -23,14 +23,14 @@ eval
 	my $cnf = new Config::Simple();
 	$cnf -> read($config);
 	my %cfg = $cnf -> vars();
-	my $ident_name = $cfg{'identification.login'};
-	my $password = $cfg{'identification.password'};
+	our $ident_name = $cfg{'identification.login'};
+	our $password = $cfg{'identification.password'};
 }
 or do 
 {
-	my $ident_name = 'mr_Anonymous';
-	my $password = '111';
-}
+	our $ident_name = 'mr_X';
+	our $password = 'fjfjf';
+};
 
 
 $VERSION = "0.6.1";                                                                                        
@@ -56,7 +56,7 @@ sub server_event_catch {
     #         "target :text" where target is either your nick or #channel                                 
     # $nick = the nick who sent the message                                                               
     # $host = host of the nick who sent the message
-
+	our ($ident_name, $password);
     my ($server, $text, $nick, $user) = @_;
 
     if (($nick == 'NickServ') and ($user == 'service@RusNet')){
