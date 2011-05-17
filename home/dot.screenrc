@@ -4,6 +4,8 @@ screen screen
 screen -t ncmpc ncmpcpp
 screen -t htop htop
 screen -t irssi irssi -c utf.rusnet.org.ru -p 7770 -n drcooper
-#screen -t ttytter /home/che/ttytter/ttytter.pl -ansi
+#screen -t rtorrent rtorrent
+screen -t irssi irssi -c utf.rusnet.org.ru -p 7770 -n Zomb1e
+#screen -t ttytter /home/che/projects/ttytter/ttytter.pl -ansi
 #screen -t mcabber # TODO
 screen -t shell
