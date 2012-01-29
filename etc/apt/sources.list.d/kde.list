@@ -1,0 +1,5 @@
+deb http://qt-kde.debian.net/debian experimental-snapshots main
+deb-src http://qt-kde.debian.net/debian experimental-snapshots main
+
+deb http://qt-kde2.debian.net/debian experimental-snapshots main
+deb-src http://qt-kde2.debian.net/debian experimental-snapshots main
