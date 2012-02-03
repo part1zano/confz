@@ -1,0 +1,113 @@
+[audioscrobbler]
+username =
+password_md5 =
+use_audioscrobbler = False
+
+[tags]
+use_mpdpaths = False
+
+[currformat]
+current = %A - %T|%L
+currsong1 = %T
+currsong2 = от %A из %B
+library = %A - %T
+title = [Sonata] %A - %T
+
+[library]
+lib_view = 0
+lib_genre = !NONE!
+lib_path = /
+lib_year = !NONE!
+lib_artist = !NONE!
+lib_album = !NONE!
+
+[player]
+art_location_custom_filename = 
+lyrics = True
+columnwidths = 792,10
+trayicon = True
+playback = True
+covers = True
+sticky = True
+xfade_enabled = False
+info_song_more = False
+search_num = 0
+progressbar = True
+ontop = False
+lyrics_location = 0
+minimize = True
+info_lyrics_expanded = True
+notification = True
+withdrawn = False
+stop_on_exit = False
+statusbar = False
+notif_location = 0
+popup_time = 2
+covers_pref = 1
+info_song_expanded = True
+tabs_expanded = False
+screen = 0
+show_header = True
+covers_type = 1
+use_infofile = False
+existing_playlist = 0
+decorated = True
+info_album_expanded = True
+infofile_path = /tmp/xmms-info
+info_art_enlarged = False
+h = 525
+expanded = True
+xfade = 0
+initial_run = False
+w = 786
+update_on_start = False
+y = 280
+x = 374
+art_location = 0
+browser = 
+
+[connection]
+auto = True
+profile_num = 0
+
+[notebook]
+info_tab_pos = 4
+current_tab_pos = 0
+current_tab_visible = True
+playlists_tab_pos = 2
+playlists_tab_visible = True
+info_tab_visible = True
+streams_tab_visible = True
+library_tab_visible = True
+library_tab_pos = 1
+streams_tab_pos = 3
+
+[streams]
+uris[8] = listen.di.fm/public3/hardstyle.pls
+names[3] = di.fm gabba
+num_streams = 9
+names[0] = di.fm trance
+uris[6] = listen.di.fm/public3/dubstep.pls
+names[5] = di.fm minimal
+names[4] = di.fm techno
+names[2] = di.fm d'n'b
+uris[7] = listen.di.fm/public3/oldschoolacid.pls
+names[6] = di.fm dubstep
+uris[3] = listen.di.fm/public3/gabber.pls
+uris[5] = listen.di.fm/public3/minimal.pls
+uris[4] = listen.di.fm/public3/techno.pls
+names[7] = di.fm oldschool acid
+uris[1] = listen.di.fm/public3/progressive.pls
+uris[0] = listen.di.fm/public3/trance.pls
+uris[2] = listen.di.fm/public3/drumandbass.pls
+names[8] = di.fm hardstyle
+names[1] = di.fm progressive
+
+[profiles]
+names[0] = Основной профиль
+num_profiles = 1
+passwords[0] = 
+hosts[0] = localhost
+ports[0] = 6600
+musicdirs[0] = /home/che/music/
+
