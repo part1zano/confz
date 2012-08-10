@@ -10,6 +10,9 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 
+menu Edit.Comment :s/^/#/<CR>
+menu Edit.Uncomment :s/^#//<CR>
+
 "filetype plugin indent on
 "set grepprg=grep\ -nH\ $*
 "let g:tex_flavor = "latex"
