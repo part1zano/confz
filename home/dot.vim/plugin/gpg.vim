@@ -295,9 +295,9 @@ function s:GPGInit(bufread)
 " don't use tty in gvim except for windows: we get their a tty for free.
 " FIXME find a better way to avoid an error.
 " with this solution only --use-agent will work
-  if (has("gui_running") && !has("gui_win32"))
-    let s:GPGCommand = s:GPGCommand . " --no-tty"
-  endif
+"  if (has("gui_running") && !has("gui_win32"))
+"    let s:GPGCommand = s:GPGCommand . " --no-tty"
+"  endif
 
 " setup shell environment for unix and windows
   let s:shellredirsave = &shellredir
