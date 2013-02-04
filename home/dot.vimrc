@@ -2,7 +2,7 @@ set backspace=2
 set nowb
 set nobk
 syn on
-"set ai!
+"set ai! " not needed anymore
 set nu!
 "set cin!
 filetype indent on "indent depends on filetype
