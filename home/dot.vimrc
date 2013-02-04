@@ -10,6 +10,8 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 
+set list lcs=tab:\|\ 
+
 menu Edit.Comment :s/^/#/<CR>
 menu Edit.Uncomment :s/^#//<CR>
 
