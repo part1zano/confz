@@ -11,8 +11,7 @@ set tabstop=4 "for compatibility
 set shiftwidth=4 "same as above
 set clipboard=unnamed
 
-" for indent stick
-set list lcs=tab:\|\ 
+set list lcs=tab:\|\ " for indent stick 
 
 set cursorline "that grey thing at cursor
 
