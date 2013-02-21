@@ -14,6 +14,8 @@ set clipboard=unnamed
 " for indent stick
 set list lcs=tab:\|\ 
 
+set cursorline "that grey thing at cursor
+
 " powerline
 if (has("gui_running")) " for vim
 	let g:Powerline_symbols='fancy'
