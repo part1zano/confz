@@ -2,10 +2,10 @@ set backspace=2
 set nowb
 set nobk
 syn on
-"set ai!
 set nu!
-"set cin!
 filetype indent on "indent depends on filetype
+filetype on
+filetype plugin on
 set smartindent
 set tabstop=4 "for compatibility
 set shiftwidth=4 "same as above
@@ -13,10 +13,12 @@ set clipboard=unnamed
 
 set list lcs=tab:\|\ " for indent stick 
 
-set cursorline "that grey thing at cursor
+if (has("gui_running"))
+	set cursorline "that grey thing at cursor
+endif
 
 " powerline
-if (has("gui_running")) " for vim
+if (has("gui_running")) " for gvim
 	let g:Powerline_symbols='fancy'
 endif
 set laststatus=2 " needed
