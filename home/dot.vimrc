@@ -11,6 +11,9 @@ set tabstop=4 "for compatibility
 set shiftwidth=4 "same as above
 set clipboard=unnamed
 
+" for eol override
+set whichwrap+=<,>,h,l,[,]
+
 " for indent stick
 set list lcs=tab:\|\ 
 
