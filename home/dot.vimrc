@@ -12,6 +12,11 @@ set shiftwidth=4 "same as above
 set clipboard=unnamed
 
 set list lcs=tab:\|\ " for indent stick 
+" for eol override
+set whichwrap+=<,>,h,l,[,]
+
+" for indent stick
+set list lcs=tab:\|\ 
 
 if (has("gui_running"))
 	set cursorline "that grey thing at cursor
