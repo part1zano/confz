@@ -15,9 +15,6 @@ set list lcs=tab:\|\ " for indent stick
 " for eol override
 set whichwrap+=<,>,h,l,[,]
 
-" for indent stick
-set list lcs=tab:\|\ 
-
 if (has("gui_running"))
 	set cursorline "that grey thing at cursor
 endif
@@ -32,3 +29,16 @@ set termencoding=utf-8 " x3, maybe not needed
 "filetype plugin indent on
 "set grepprg=grep\ -nH\ $*
 "let g:tex_flavor = "latex"
+
+
+call SMap("<F2>", ":w<cr>")
+au FocusLost * :wa
+
+set history=64
+set undolevels=128
+set undodir=~/.vim/undo/
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+
