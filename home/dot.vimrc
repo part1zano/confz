@@ -31,6 +31,27 @@ set termencoding=utf-8 " x3, maybe not needed
 "let g:tex_flavor = "latex"
 
 
+" More suitable mapping
+function! SMap(key, action, ...)
+    let modes = " vi"
+    if (a:0 > 0)
+        let modes = a:{1}
+    endif
+    if (match(modes, '\Ii') != -1)
+        execute 'imap ' . a:key . ' <Esc>' . a:action
+    endif
+    if (match(modes, '\Nn') != -1)
+        execute 'nmap ' . a:key . ' <Esc>' . a:action
+    endif
+    if (match(modes, ' ') != -1)
+        execute 'map ' . a:key . ' <Esc>' . a:action
+    endif
+    if (match(modes, '\Vv') != -1)
+        execute 'vmap ' . a:key . ' <Esc>' . a:action
+    endif
+endfunction
+
+
 call SMap("<F2>", ":w<cr>")
 au FocusLost * :wa
 
