@@ -1,3 +1,0 @@
- # taken from testing. created according to backports.org description
- deb http://www.debian-desktop.org/pub/linux/debian/kde46-squeeze debian-desktop main
- deb-src http://www.debian-desktop.org/pub/linux/debian/kde46-squeeze debian-desktop main
