@@ -1,8 +1,8 @@
 #минимальное число пиров на торрент
 min_peers = 1
 
-# scgi support is off by default
-# scgi_port = 0.0.0.0:5000
+# scgi support
+scgi_port = 127.0.0.1:5000
 
 #максимальное число пиров на торрент 
 max_peers = 250
@@ -27,6 +27,9 @@ schedule = watch_default,5,5,load_start=/home/che/.rtorrent/autoload/*.torrent
 #проверяет каталоги 2 и 3 на новые *.torrent файлы и сохраняет закачки в соответствующие папки
 schedule = watch_cinema,5,5,"load_start=/home/che/.rtorrent/autoload/cinema/*.torrent,d.set_directory=/home/che/cinema"
 schedule = watch_music,5,5,"load_start=/home/che/.rtorrent/autoload/music/*.torrent,d.set_directory=/home/che/music/uncat"
+schedule = watch_iso,5,5,"load_start=/home/che/.rtorrent/autoload/iso/*.torrent,d.set_directory=/home/che/loads/iso"
+schedule = watch_r34d,5,5,"load_start=/home/che/.rtorrent/autoload/r34d/*.torrent,d.set_directory=/home/che/r34d/uncat"
+schedule = watch_fish,5,5,"load_start=/home/che/.rtorrent/autoload/fish/*.torrent,d.set_directory=/home/che/fish"
 
 #номер порта (или нескольких портов) который открывает клиент для обмена данными
 port_range = 40890-40890
