@@ -88,7 +88,7 @@ zstyle ':completion:*:expand:*' tag-order all-expansions
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:warnings' format 'No matches for: %d'
+#zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
 zstyle ':completion:*' group-name ''
 # match uppercase from lowercase
@@ -98,7 +98,7 @@ zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
 # command for process lists, the local web server details and host completion
 zstyle ':completion:*:processes' command 'ps -o pid,s,nice,stime,args'
-zstyle ':completion:*:urls' local 'www' '/var/www/htdocs' 'public_html'
+#zstyle ':completion:*:urls' local 'www' '/var/www/htdocs' 'public_html'
 zstyle '*' hosts $hosts
 
 # Filename suffixes to ignore during completion (except after rm command)
@@ -110,3 +110,8 @@ fignore=(.o .c~ .old .pro)
 # ignore completion functions (until the _ignored completer)
 zstyle ':completion:*:functions' ignored-pacodeerns '_*'
 export PATH=$PATH:/usr/local/gcc-arm-embedded-4_8-2014q2-20140609/bin
+
+#__remote_commands=(scp rsync)
+#autoload -U url-quote-magic
+#zle -N self-insert url-quote-magic
+#zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
