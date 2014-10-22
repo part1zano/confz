@@ -5,12 +5,16 @@ autoload -U colors
 colors
 export PS1='[\t] $? \[\e[00m\][\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]]\$ ' # for bash/sh compatibility
 export PROMPT="%{$reset_color%}[%*] %? [%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[cyan]%}%~%{$reset_color%}]%# "
+
+export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
+
 export WATCH=all		# login watch as tcsh's set watch = (0 any any)
 export LOGCHECK=1		# period in seconds for $watch check
 export HISTSIZE=9999		# size of internal (not file) history
 export SAVEHIST=$HISTSIZE	# how many lines to write to history file
 export HISTFILE=~/.zhist	# history file name
 export REPORTTIME=30		# as "time" if command runs more than this secs
+
 #export RPROMPT='%?/%l [%*]'	# right prompt
 setopt -h			# no duplicate last event in history
 setopt hist_no_store		# remove "history" commands from history
@@ -19,13 +23,12 @@ setopt INC_APPEND_HISTORY	# add to hist file immediately
 setopt SHARE_HISTORY		# all parallel sessions share history
 setopt EXTENDED_HISTORY		# save timestamps in history file
 setopt HIST_IGNORE_SPACE	# do not save cmds beginning from space
-setopt -O			# correct spelling of all arguments in a line
+#setopt -O			# correct spelling of all arguments in a line
 setopt nohup			# don't send SIGHUP to bg jobs on exit
 setopt AUTO_CONTINUE		# auto send SIGCONT to disown'ed jobs
 setopt LIST_PACKED		# compact big completion: diffrnt column width
 bindkey -e			# emacs key bindings
-
-#alias ll="ls -laF --color=auto"
+setopt interactivecomments
 
 export PAGER="less"
 alias .="source"
@@ -111,7 +114,7 @@ fignore=(.o .c~ .old .pro)
 zstyle ':completion:*:functions' ignored-pacodeerns '_*'
 export PATH=$PATH:/usr/local/gcc-arm-embedded-4_8-2014q2-20140609/bin
 
-#__remote_commands=(scp rsync)
-#autoload -U url-quote-magic
-#zle -N self-insert url-quote-magic
-#zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
+__remote_commands=(scp rsync ssh)
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
