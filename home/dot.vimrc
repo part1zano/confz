@@ -20,7 +20,7 @@ if (has("gui_running"))
 endif
 
 if (has("gui_running"))
-	set guifont=Droid\ Sans\ Mono
+	set guifont=Droid\ Sans\ Mono " a nice monospace font
 endif
 
 " powerline
