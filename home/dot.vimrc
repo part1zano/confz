@@ -19,6 +19,10 @@ if (has("gui_running"))
 	set cursorline "that grey thing at cursor
 endif
 
+if (has("gui_running"))
+	set guifont=Droid\ Sans\ Mono
+endif
+
 " powerline
 if (has("gui_running")) " for gvim
 	let g:Powerline_symbols='fancy'
