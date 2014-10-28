@@ -19,7 +19,7 @@ setopt INC_APPEND_HISTORY	# add to hist file immediately
 setopt SHARE_HISTORY		# all parallel sessions share history
 setopt EXTENDED_HISTORY		# save timestamps in history file
 setopt HIST_IGNORE_SPACE	# do not save cmds beginning from space
-setopt -O			# correct spelling of all arguments in a line
+#setopt -O			# correct spelling of all arguments in a line
 setopt nohup			# don't send SIGHUP to bg jobs on exit
 setopt AUTO_CONTINUE		# auto send SIGCONT to disown'ed jobs
 setopt LIST_PACKED		# compact big completion: diffrnt column width
