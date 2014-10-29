@@ -11,6 +11,9 @@ set tabstop=4 "for compatibility
 set shiftwidth=4 "same as above
 set clipboard=unnamed
 
+set ignorecase
+set smartcase
+
 set list lcs=tab:\|\ " for indent stick 
 " for eol override
 set whichwrap+=<,>,h,l,[,]
@@ -60,7 +63,6 @@ call SMap("<F2>", ":w<cr>")
 au FocusLost * :wa
 
 set history=64
-set undolevels=128
 set undodir=~/.vim/undo/
 set undofile
 set undolevels=1000
