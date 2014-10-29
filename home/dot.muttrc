@@ -18,7 +18,7 @@
 # macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 # macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 
-set editor="vim -c /home/che/.vimrc"
+set editor="vim -S /home/che/.vimrc"
 
 set from="Maxim V Filimonov <che@bein.link>"
 
