@@ -1,0 +1,55 @@
+#set mbox_type=Maildir
+#
+# set spoolfile="~/Maildir/"
+# set folder="~/Maildir/"
+# set mask="!^\\.[^.]"
+# set record="+.Sent"
+# set postponed="+.Drafts"
+#
+# mailboxes ! + `\\
+# for file in ~/Maildir/.*; do \\
+#   box=$(basename "$file"); \\
+#   if [ ! "$box" = '.' -a ! "$box" = '..' -a ! "$box" = '.customflags' \\
+#       -a ! "$box" = '.subscriptions' ]; then \\
+#     echo -n "\"+$box\" "; \\
+#   fi; \\
+# done`
+
+# macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+# macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+
+set editor="vim -c /home/che/.vimrc"
+
+set from="Maxim V Filimonov <che@bein.link>"
+
+set smtp_url=smtp://che@mail.bein.link:25/
+set ssl_force_tls=yes
+
+set folder=imaps://che@mail.bein.link
+set spoolfile=imaps://che@mail.bein.link/Inbox
+set sort=reverse-date-sent
+mailboxes =Inbox/freebsd-advocacy =Inbox/freebsd-arm =Inbox/freebsd-bluetooth =Inbox/freebsd-bugs =Inbox/freebsd-chromium =Inbox/freebsd-current =Inbox/freebsd-drivers =Inbox/freebsd-embedded =Inbox/freebsd-hackers =Inbox/freebsd-hardware =Inbox/freebsd-jobs =Inbox/freebsd-pkg =Inbox/freebsd-ports =Inbox/freebsd-python =Inbox/freebsd-questions =Inbox/freebsd-test =Inbox/Sent =Inbox/Trash =Inbox
+
+set record="=INBOX.Sent"
+set postponed="=INBOX.Drafts"
+
+lists freebsd-arm@freebsd.org freebsd-advocacy@freebsd.org freebsd-bluetooth@freebsd.org freebsd-bugs@freebsd.org freebsd-chromium@freebsd.org freebsd-current@freebsd.org freebsd-drivers@freebsd.org freebsd-embedded@freebsd.org freebsd-hackers@freebsd.org freebsd-hardware@freebsd.org freebsd-jobs@freebsd.org freebsd-pkg@freebsd.org freebsd-ports@freebsd.org freebsd-python@freebsd.org freebsd-questions@freebsd.org freebsd-test@freebsd.org
+
+save-hook arm@freebsd.org =INBOX.freebsd-arm
+save-hook advocacy@freebsd.org =INBOX.freebsd-advocacy
+save-hook bluetooth@freebsd.org =INBOX.freebsd-bluetooth
+save-hook bugs@freebsd.org =INBOX.freebsd-bugs
+save-hook chromium@freebsd.org =INBOX.freebsd-chromium
+save-hook current@freebsd.org =INBOX.freebsd-current
+save-hook drivers@freebsd.org =INBOX.freebsd-drivers
+save-hook embedded@freebsd.org =INBOX.freebsd-embedded
+save-hook hackers@freebsd.org =INBOX.freebsd-hackers
+save-hook hardware@freebsd.org =INBOX.freebsd-hardware
+save-hook jobs@freebsd.org =INBOX.freebsd-jobs
+save-hook pkg@freebsd.org =INBOX.freebsd-pkg
+save-hook ports@freebsd.org =INBOX.freebsd-ports
+save-hook python@freebsd.org =INBOX.freebsd-python
+save-hook questions@freebsd.org =INBOX.freebsd-questions
+save-hook test@freebsd.org =INBOX.freebsd-test
+save-hook bugzilla-noreply@freebsd.org =INBOX.freebsd-bugs
+
