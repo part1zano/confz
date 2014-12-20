@@ -1,0 +1,2 @@
+"|exec /usr/local/bin/procmail || exit 75"
+
