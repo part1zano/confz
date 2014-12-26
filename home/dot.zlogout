@@ -1,0 +1,1 @@
+pkill $SSH_AGENT_PID
