@@ -69,7 +69,7 @@
 # Defaults!/usr/bin/sudoreplay !log_output
 # Defaults!/usr/local/bin/sudoreplay !log_output
 # Defaults!/sbin/reboot !log_output
-Defaults env_keep += "XDG_SESSION_COOKIE", env_keep += "DISPLAY", env_keep += "HOME", passprompt="[sudo] password for %u: ", insults
+Defaults env_keep += "XDG_SESSION_COOKIE DISPLAY HOME SSH_AUTH_SOCK", passprompt="[sudo] password for %u: ", insults
 
 
 ##
