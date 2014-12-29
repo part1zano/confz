@@ -121,6 +121,7 @@ zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le 
 
 ssh-agent > ~/.ssh-agent.zsh
 . ~/.ssh-agent.zsh
+rm ~/.ssh-agent.zsh
 ssh-add
 
 
