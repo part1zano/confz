@@ -4,13 +4,11 @@
 autoload -U colors
 colors
 export PS1='[\t] $? \[\e[00m\][\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]]\$ ' # for bash/sh compatibility
-export PROMPT="%{$reset_color%}[%*] %? [%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[cyan]%}%~%{$reset_color%}]%# "
-
-export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
+export PROMPT="%{$reset_color%}[%*] %? [%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m %{$fg[cyan]%}%~%{$reset_color%}]%# "
 
 export WATCH=all		# login watch as tcsh's set watch = (0 any any)
 export LOGCHECK=1		# period in seconds for $watch check
-export HISTSIZE=9999		# size of internal (not file) history
+export HISTSIZE=999999		# size of internal (not file) history
 export SAVEHIST=$HISTSIZE	# how many lines to write to history file
 export HISTFILE=~/.zhist	# history file name
 export REPORTTIME=30		# as "time" if command runs more than this secs
@@ -30,6 +28,8 @@ setopt LIST_PACKED		# compact big completion: diffrnt column width
 bindkey -e			# emacs key bindings
 setopt interactivecomments
 
+export PATH=$PATH:/usr/local/gcc-arm-embedded-4_8-2014q2-20140609/bin
+export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
 export PAGER="less"
 alias .="source"
 alias grep='grep --color=auto'
@@ -112,16 +112,18 @@ fignore=(.o .c~ .old .pro)
 
 # ignore completion functions (until the _ignored completer)
 zstyle ':completion:*:functions' ignored-pacodeerns '_*'
-export PATH=$PATH:/usr/local/gcc-arm-embedded-4_8-2014q2-20140609/bin
 
 __remote_commands=(scp rsync ssh)
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
-ssh-agent > ~/.ssh-agent.zsh
-. ~/.ssh-agent.zsh
-rm ~/.ssh-agent.zsh
-ssh-add
-
-
+# ssh-agent-related
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+	ssh-agent > ~/.ssh-agent.zsh
+	. ~/.ssh-agent.zsh
+	rm ~/.ssh-agent.zsh
+	ssh-add
+else
+	echo "won't start new ssh-agent"
+fi
