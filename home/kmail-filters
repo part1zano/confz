@@ -4,6 +4,29 @@ AutomaticName=true
 ConfigureShortcut=false
 ConfigureToolbar=false
 Enabled=true
+StopProcessingHere=true
+ToolbarName=<List-Id>: <freebsd-security-notifications.freebsd.org>
+action-args-0=bein/Inbox/freebsd-security-notifications
+action-name-0=transfer
+actions=1
+apply-on=check-mail,manual-filtering
+contentsA=<freebsd-security-notifications.freebsd.org>
+contentsB=security-notifications@freebsd.org
+fieldA=List-Id
+fieldB=<recipients>
+funcA=contains
+funcB=contains
+identifier=EKRjVFy9M2085xhG
+name=<List-Id>: <freebsd-security-notifications.freebsd.org>
+operator=and
+rules=2
+
+[Filter #1]
+Applicability=0
+AutomaticName=true
+ConfigureShortcut=false
+ConfigureToolbar=false
+Enabled=true
 Icon=system-run
 StopProcessingHere=true
 ToolbarName=<List-Id>: <freebsd-advocacy.freebsd.org>
@@ -22,7 +45,7 @@ name=<List-Id>: <freebsd-advocacy.freebsd.org>
 operator=and
 rules=2
 
-[Filter #1]
+[Filter #10]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -30,23 +53,23 @@ ConfigureToolbar=false
 Enabled=true
 Icon=system-run
 StopProcessingHere=true
-ToolbarName=<List-Id>: <freebsd-test.freebsd.org>
-action-args-0=bein/Inbox/freebsd-test
+ToolbarName=<List-Id>: <freebsd-pkg.freebsd.org>
+action-args-0=bein/Inbox/freebsd-pkg
 action-name-0=transfer
 actions=1
 apply-on=check-mail,manual-filtering
-contentsA=<freebsd-test.freebsd.org>
-contentsB=test@freebsd.org
+contentsA=<freebsd-pkg.freebsd.org>
+contentsB=pkg@freebsd.org
 fieldA=List-Id
 fieldB=<recipients>
 funcA=contains
 funcB=contains
-identifier=AX8ZoEz7fVQBX13J
-name=<List-Id>: <freebsd-test.freebsd.org>
+identifier=b7xZAq2fyl1T3LPk
+name=<List-Id>: <freebsd-pkg.freebsd.org>
 operator=or
 rules=2
 
-[Filter #10]
+[Filter #11]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -70,7 +93,7 @@ name=<List-Id>: <freebsd-hardware.freebsd.org>
 operator=or
 rules=2
 
-[Filter #11]
+[Filter #12]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -94,7 +117,7 @@ name=<List-Id>: <freebsd-embedded.freebsd.org>
 operator=or
 rules=2
 
-[Filter #12]
+[Filter #13]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -118,7 +141,7 @@ name=<List-Id>: <freebsd-drivers.freebsd.org>
 operator=or
 rules=2
 
-[Filter #13]
+[Filter #14]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -139,7 +162,7 @@ name=<From>: bugzilla-noreply@freebsd.org
 operator=and
 rules=1
 
-[Filter #14]
+[Filter #15]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -163,7 +186,7 @@ name=<List-Id>: <freebsd-jobs.freebsd.org>
 operator=or
 rules=2
 
-[Filter #15]
+[Filter #16]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -187,7 +210,7 @@ name=<List-Id>: <freebsd-arm.freebsd.org>
 operator=or
 rules=2
 
-[Filter #16]
+[Filter #17]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -219,6 +242,30 @@ ConfigureToolbar=false
 Enabled=true
 Icon=system-run
 StopProcessingHere=true
+ToolbarName=<List-Id>: <freebsd-test.freebsd.org>
+action-args-0=bein/Inbox/freebsd-test
+action-name-0=transfer
+actions=1
+apply-on=check-mail,manual-filtering
+contentsA=<freebsd-test.freebsd.org>
+contentsB=test@freebsd.org
+fieldA=List-Id
+fieldB=<recipients>
+funcA=contains
+funcB=contains
+identifier=AX8ZoEz7fVQBX13J
+name=<List-Id>: <freebsd-test.freebsd.org>
+operator=or
+rules=2
+
+[Filter #3]
+Applicability=0
+AutomaticName=true
+ConfigureShortcut=false
+ConfigureToolbar=false
+Enabled=true
+Icon=system-run
+StopProcessingHere=true
 ToolbarName=<List-Id>: <freebsd-chromium.freebsd.org>
 action-args-0=bein/Inbox/freebsd-chromium
 action-name-0=transfer
@@ -235,7 +282,7 @@ name=<List-Id>: <freebsd-chromium.freebsd.org>
 operator=or
 rules=2
 
-[Filter #3]
+[Filter #4]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -259,7 +306,7 @@ name=<List-Id>: <freebsd-ports.freebsd.org>
 operator=or
 rules=2
 
-[Filter #4]
+[Filter #5]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -283,7 +330,7 @@ name=<List-Id>: <freebsd-hackers.freebsd.org>
 operator=or
 rules=2
 
-[Filter #5]
+[Filter #6]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -307,7 +354,7 @@ name=<List-Id>: <freebsd-current.freebsd.org>
 operator=or
 rules=2
 
-[Filter #6]
+[Filter #7]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -331,7 +378,7 @@ name=<List-Id>: <freebsd-bluetooth.freebsd.org>
 operator=or
 rules=2
 
-[Filter #7]
+[Filter #8]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -355,7 +402,7 @@ name=<List-Id>: <freebsd-python.freebsd.org>
 operator=or
 rules=2
 
-[Filter #8]
+[Filter #9]
 Applicability=0
 AutomaticName=true
 ConfigureShortcut=false
@@ -376,29 +423,5 @@ name=<List-Id>: <freebsd-ports-bugs.freebsd.org>
 operator=and
 rules=1
 
-[Filter #9]
-Applicability=0
-AutomaticName=true
-ConfigureShortcut=false
-ConfigureToolbar=false
-Enabled=true
-Icon=system-run
-StopProcessingHere=true
-ToolbarName=<List-Id>: <freebsd-pkg.freebsd.org>
-action-args-0=bein/Inbox/freebsd-pkg
-action-name-0=transfer
-actions=1
-apply-on=check-mail,manual-filtering
-contentsA=<freebsd-pkg.freebsd.org>
-contentsB=pkg@freebsd.org
-fieldA=List-Id
-fieldB=<recipients>
-funcA=contains
-funcB=contains
-identifier=b7xZAq2fyl1T3LPk
-name=<List-Id>: <freebsd-pkg.freebsd.org>
-operator=or
-rules=2
-
 [General]
-filters=17
+filters=18
