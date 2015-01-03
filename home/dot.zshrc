@@ -4,7 +4,7 @@
 autoload -U colors
 colors
 export PS1='[\t] $? \[\e[00m\][\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]]\$ ' # for bash/sh compatibility
-export PROMPT="%{$reset_color%}[%*] %? [%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m %{$fg[cyan]%}%~%{$reset_color%}]%# "
+export PROMPT="%{$reset_color%}[%*] %? [%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m %{$fg[cyan]%}%~%{$reset_color%}]%# "
 
 export WATCH=all		# login watch as tcsh's set watch = (0 any any)
 export LOGCHECK=1		# period in seconds for $watch check
