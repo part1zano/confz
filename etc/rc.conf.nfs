@@ -1,0 +1,9 @@
+# nfs-related shit
+nfs_server_enable="YES"
+nfsv4_server_enable="YES"
+nfsuserd_enable="YES"
+nfs_server_flags="-t"
+rpcbind_enable="YES"
+mountd_enable="YES"
+rpc_lockd_enable="YES"
+rpc_statd_enable="YES"
