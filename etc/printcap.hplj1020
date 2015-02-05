@@ -1,0 +1,2 @@
+LJ1020|HP LaserJet 1020:sh:if=/usr/local/libexec/if-hplj:lp=/dev/ulpt0:sd=/var/spool/output/lpd/LJ1020:lf=/var/log/lpd-errs
+lp|HP LaserJet 1020:sh:if=/usr/local/libexec/if-hplj:lp=/dev/ulpt0:sd=/var/spool/output/lpd:lf=/var/log/lpd-errs
