@@ -18,6 +18,7 @@
 ## password
 #password	include		system
 #
+#auth	sufficient	/usr/local/lib/pam_fprint.so
 auth sufficient /usr/local/lib/pam_ssh_agent_auth.so file=~/.ssh/authorized_keys
 auth required pam_deny.so
 account include system
