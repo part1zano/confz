@@ -1,0 +1,23 @@
+#!/bin/sh
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+export TMPDIR=/var/tmp
+
+IFS="" read -r first_line
+first_two_chars=`expr "$first_line" : '\(..\)'`
+
+case "$first_line" in
+*%-12345X@PJL*)
+    echo "$first_line"; cat
+    exit $?
+    ;;
+esac
+
+if [ "$first_two_chars" = "%!" ]; then
+    { echo "$first_line"; cat; } | foo2zjs-wrapper -p 9 -P -z1 -L0
+else
+    { echo "$first_line"; cat; } | \
+    a2ps -1 -B -X koi8-r -i -q \
+        --borders no --end-of-line=n --medium=A4 -o - | \
+    foo2zjs-wrapper -p 9 -P -z1 -L0
+fi

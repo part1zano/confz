@@ -11,12 +11,19 @@ set tabstop=4 "for compatibility
 set shiftwidth=4 "same as above
 set clipboard=unnamed
 
+set ignorecase
+set smartcase
+
 set list lcs=tab:\|\ " for indent stick 
 " for eol override
 set whichwrap+=<,>,h,l,[,]
 
 if (has("gui_running"))
 	set cursorline "that grey thing at cursor
+endif
+
+if (has("gui_running"))
+	set guifont=Droid\ Sans\ Mono " a nice monospace font
 endif
 
 " powerline
@@ -56,7 +63,6 @@ call SMap("<F2>", ":w<cr>")
 au FocusLost * :wa
 
 set history=64
-set undolevels=128
 set undodir=~/.vim/undo/
 set undofile
 set undolevels=1000

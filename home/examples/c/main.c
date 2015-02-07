@@ -1,5 +1,6 @@
 #include "mylib.h"
 
-void main(void) {
+int main(void) {
 	println("test");
+	return 0;
 }
