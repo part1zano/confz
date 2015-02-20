@@ -2,4 +2,14 @@ postgresql_enable="YES"
 postgres_class="postgres"
 
 syslogd_enable="YES"
-syslogd_flags="-a 172.16.32.33 -v -v"
+## syslog server
+#syslogd_flags="-a 172.16.32.33 -v -v"
+## syslog client
+#syslogd_flags="-s -v -v"
+
+uwsgi_enable="YES"
+uwsgi_profiles="cheapp"
+uwsgi_cheapp_socket="/tmp/cheapp.sock"
+uwsgi_cheapp_flags="-w cheapp:app --pythonpath /var/www/cheapp"
+php_fpm_enable="YES"
+
