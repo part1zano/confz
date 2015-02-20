@@ -1,0 +1,14 @@
+firewall_enable="YES"
+firewall_type="open"
+firewall_nat_enable="YES"
+firewall_nat_interface="em0"
+firewall_nat_flags="reset same_ports"
+
+rspamd_enable="YES"
+rmilter_enable="YES"
+
+postgresql_enable="YES"
+postgres_class="postgres"
+
+syslogd_enable="YES"
+syslogd_flags="-a 172.16.32.33 -v -v"
