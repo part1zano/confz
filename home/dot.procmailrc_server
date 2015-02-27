@@ -1,0 +1,24 @@
+MAILDIR=$HOME/Maildir
+DEFAULT=$MAILDIR/new/msg_`date +%Y%m%dT%H%M%S:%s_bein.link`
+LASTFOLDER=$MAILDIR/new
+LOGFILE=$HOME/.procmail.log
+
+:0 c:
+mail.save
+
+:0
+* ^X-Spam: yes
+Spam/new
+
+:0
+* ^From.*@facebookmail.com
+Spam/new
+
+:0
+* ^Sender:.owner-freebsd-\/[^@]+@FreeBSD.ORG
+{
+LISTNAME=${MATCH}
+:0
+* LISTNAME??^\/[^@]+
+freebsd-${MATCH}/new/msg`date +%Y%m%dT%H%M%S:%s_bein.link`
+}
