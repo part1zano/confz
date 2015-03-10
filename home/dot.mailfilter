@@ -1,0 +1,38 @@
+TYPE="maildir"
+logfile "$HOME/.mailfilter.log"
+
+MAILDIRMAKE="/usr/local/bin/maildirmake"
+SPAMHEADER="X-Spam:"
+DEFAULT="$HOME/Maildir"
+FOLDERS="$DEFAULT/."
+
+if ( /^List-Id:.*<([0-9A-Za-z_\-]+)\.+/ )
+{
+    LISTNAME="$MATCH1"
+
+    # don't create a folder for Mailman status messages, just deliver them
+    if ( $LISTNAME =~ /Mailman/ )
+        to $DEFAULT
+
+    if ( $MAILDIR )
+    {
+        `${MAILDIRMAKE} -f "$LISTNAME" "$DEFAULT"`
+        if ( $RETURNCODE == 0 )
+        {
+            # notify the user when new folders are created
+            NEWFOLDERMSG="$LISTNAME list folder created"
+            `${ECHO} "$NEWFOLDERMSG" | ${MAIL} -s "$NEWFOLDERMSG" $LOGNAME`
+        }
+    }
+    to ${FOLDERS}$LISTNAME
+}
+
+if ( /^X-Spam:/ ) 
+{
+	to $DEFAULT/Spam
+}
+
+if ( /From.*bugzilla/ ) 
+{
+	to $DEFAULT/freebsd-bugs
+}
