@@ -18,9 +18,11 @@
 # macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 # macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 
+set from="Maxim V Filimonov <che@bein.link>"
 set record="+Inbox.Sent"
+set postponed="+Inbox.Drafts"
 set signature=~/.signature
-set editor=vim
+set editor="vim -S /home/che/.vimrc"
 set folder=imaps://che@mail.bein.link
 set spoolfile=imaps://che@mail.bein.link/Inbox
 set sort=reverse-date-sent
