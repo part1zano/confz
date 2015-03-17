@@ -18,38 +18,68 @@
 # macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 # macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
 
-set editor="vim -S /home/che/.vimrc"
-
-set from="Maxim V Filimonov <che@bein.link>"
-
-set smtp_url=smtp://che@mail.bein.link:25/
-set ssl_force_tls=yes
-
+set record="+Inbox.Sent"
+set signature=~/.signature
+set editor=vim
 set folder=imaps://che@mail.bein.link
 set spoolfile=imaps://che@mail.bein.link/Inbox
 set sort=reverse-date-sent
-mailboxes =Inbox/freebsd-advocacy =Inbox/freebsd-arm =Inbox/freebsd-bluetooth =Inbox/freebsd-bugs =Inbox/freebsd-chromium =Inbox/freebsd-current =Inbox/freebsd-drivers =Inbox/freebsd-embedded =Inbox/freebsd-hackers =Inbox/freebsd-hardware =Inbox/freebsd-jobs =Inbox/freebsd-pkg =Inbox/freebsd-ports =Inbox/freebsd-python =Inbox/freebsd-questions =Inbox/freebsd-test =Inbox/Sent =Inbox/Trash =Inbox
+mailboxes =Inbox/freebsd-advocacy =Inbox/freebsd-arm =Inbox/freebsd-bluetooth =Inbox/freebsd-bugs =Inbox/freebsd-chromium =Inbox/freebsd-current =Inbox/freebsd-drivers =Inbox/freebsd-embedded =Inbox/freebsd-hackers =Inbox/freebsd-hardware =Inbox/freebsd-jobs =Inbox/freebsd-pkg =Inbox/freebsd-ports =Inbox/freebsd-python =Inbox/freebsd-questions =Inbox/freebsd-test =Inbox/kde-freebsd =Inbox/Sent =Inbox/Trash =Inbox
 
-set record="=INBOX.Sent"
-set postponed="=INBOX.Drafts"
+lists freebsd-arm@freebsd.org freebsd-advocacy@freebsd.org freebsd-bluetooth@freebsd.org freebsd-bugs@freebsd.org freebsd-chromium@freebsd.org freebsd-current@freebsd.org freebsd-drivers@freebsd.org freebsd-embedded@freebsd.org freebsd-hackers@freebsd.org freebsd-hardware@freebsd.org freebsd-jobs@freebsd.org freebsd-pkg@freebsd.org freebsd-ports@freebsd.org freebsd-python@freebsd.org freebsd-questions@freebsd.org freebsd-test@freebsd.org kde-freebsd@kde.org
 
-lists freebsd-arm@freebsd.org freebsd-advocacy@freebsd.org freebsd-bluetooth@freebsd.org freebsd-bugs@freebsd.org freebsd-chromium@freebsd.org freebsd-current@freebsd.org freebsd-drivers@freebsd.org freebsd-embedded@freebsd.org freebsd-hackers@freebsd.org freebsd-hardware@freebsd.org freebsd-jobs@freebsd.org freebsd-pkg@freebsd.org freebsd-ports@freebsd.org freebsd-python@freebsd.org freebsd-questions@freebsd.org freebsd-test@freebsd.org
+save-hook .*arm@freebsd.org =INBOX/freebsd-arm
+save-hook .*advocacy@freebsd.org =INBOX/freebsd-advocacy
+save-hook .*bluetooth@freebsd.org =INBOX/freebsd-bluetooth
+save-hook .*bugs@freebsd.org =INBOX/freebsd-bugs
+save-hook .*chromium@freebsd.org =INBOX/freebsd-chromium
+save-hook .*current@freebsd.org =INBOX/freebsd-current
+save-hook .*drivers@freebsd.org =INBOX/freebsd-drivers
+save-hook .*embedded@freebsd.org =INBOX/freebsd-embedded
+save-hook .*hackers@freebsd.org =INBOX/freebsd-hackers
+save-hook .*hardware@freebsd.org =INBOX/freebsd-hardware
+save-hook .*jobs@freebsd.org =INBOX/freebsd-jobs
+save-hook .*pkg@freebsd.org =INBOX/freebsd-pkg
+save-hook .*ports@freebsd.org =INBOX/freebsd-ports
+save-hook .*python@freebsd.org =INBOX/freebsd-python
+save-hook .*questions@freebsd.org =INBOX/freebsd-questions
+save-hook .*test@freebsd.org =INBOX/freebsd-test
+save-hook .*bugzilla-noreply@freebsd.org =INBOX/freebsd-bugs
 
-save-hook arm@freebsd.org =INBOX.freebsd-arm
-save-hook advocacy@freebsd.org =INBOX.freebsd-advocacy
-save-hook bluetooth@freebsd.org =INBOX.freebsd-bluetooth
-save-hook bugs@freebsd.org =INBOX.freebsd-bugs
-save-hook chromium@freebsd.org =INBOX.freebsd-chromium
-save-hook current@freebsd.org =INBOX.freebsd-current
-save-hook drivers@freebsd.org =INBOX.freebsd-drivers
-save-hook embedded@freebsd.org =INBOX.freebsd-embedded
-save-hook hackers@freebsd.org =INBOX.freebsd-hackers
-save-hook hardware@freebsd.org =INBOX.freebsd-hardware
-save-hook jobs@freebsd.org =INBOX.freebsd-jobs
-save-hook pkg@freebsd.org =INBOX.freebsd-pkg
-save-hook ports@freebsd.org =INBOX.freebsd-ports
-save-hook python@freebsd.org =INBOX.freebsd-python
-save-hook questions@freebsd.org =INBOX.freebsd-questions
-save-hook test@freebsd.org =INBOX.freebsd-test
-save-hook bugzilla-noreply@freebsd.org =INBOX.freebsd-bugs
+#Header
+color   attachment  cyan         default
+color   header      green        default  "^(message-id|x-mailer|user-agent):"
+color   header      yellow       default  "^date:"
+color   header      yellow       default  "^subject: "
+color   header      cyan         default  "^(from|to|cc|reply-to):"
+color   header      red          default  "^X-URL:"
 
+#index mail in box
+color   index       red          default  "~F|~N"
+color   index       red          default  ~D
+color   index       blue         default  ~T
+color   index       green        default  ~O
+
+color   indicator   brightyellow blue
+color   markers     red          default
+color   quoted      green        default
+color   signature   brightwhite  default
+color   status      yellow       blue     #statusbar
+color   tilde       cyan         default
+color   tree        yellow       default  #mails tree
+
+#body
+color   body        black        default  "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
+color   body        red          default  "((ftp|http|https)://|(file|news):|www\\.)[-a-z0-9_.:]*[a-z0-9](/[^][{} \t\n\r\"<>()]*[^][{} \t\n\r\"<>().,:!])?/?"
+color   body        cyan         default  "[-a-z_0-9.]+@[-a-z_0-9.]+" # e-mail addresses
+color   body        cyan         default  "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}" #ip addresses
+color   body        yellow       default  "(Veniamin|Gvozdikov|Вениамин|Гвоздиков)" #me
+
+
+color   body        brightcyan   default  "[;:][-o][)/(|]"     # emoticons
+color   body        brightcyan   default  "[;:][)(|]"          # emoticons
+color   body        brightcyan   default  "[*]?((N)?ACK|CU|LOL|SCNR|BRB|BTW|CWYL|\
+                                           |FWIW|vbg|GD&R|HTH|HTHBE|IMHO|IMNSHO|\
+                                           |IRL|RTFM|ROTFL|ROFL|YMMV)[*]?"
+color   body        cyan         default  "[ ][*][^*]*[*][ ]?" # more emoticon?
+color   body        cyan         default  "[ ]?[*][^*]*[*][ ]" # more emoticon?
