@@ -20,11 +20,14 @@
 
 # custom keys
 bind index G imap-fetch-mail
+macro index,pager A "<pipe-message>pycard-import<enter>" "add sender address to pycardsyncer"
+set query_command="pc_query -m '%s'"
+
 
 # some settings
 set from="Maxim V Filimonov <che@bein.link>"
-set record="+Inbox.Sent"
-set postponed="+Inbox.Drafts"
+set record="+Inbox/Sent"
+set postponed="+Inbox/Drafts"
 set signature=~/.signature
 set editor="vim -S /home/che/.vimrc"
 set folder=imaps://che@mail.bein.link
@@ -32,9 +35,9 @@ set spoolfile=imaps://che@mail.bein.link/Inbox
 set sort=reverse-date-sent
 
 # mailboxes & lists
-mailboxes =Inbox/freebsd-advocacy =Inbox/freebsd-arm =Inbox/freebsd-bluetooth =Inbox/freebsd-bugs =Inbox/freebsd-chromium =Inbox/freebsd-current =Inbox/freebsd-drivers =Inbox/freebsd-embedded =Inbox/freebsd-hackers =Inbox/freebsd-hardware =Inbox/freebsd-jobs =Inbox/freebsd-pkg =Inbox/freebsd-ports =Inbox/freebsd-python =Inbox/freebsd-questions =Inbox/freebsd-test =Inbox/kde-freebsd =Inbox/Sent =Inbox/Trash =Inbox
+mailboxes =Inbox/freebsd-advocacy =Inbox/freebsd-arm =Inbox/freebsd-bluetooth =Inbox/freebsd-bugs =Inbox/freebsd-chromium =Inbox/freebsd-current =Inbox/freebsd-drivers =Inbox/freebsd-embedded =Inbox/freebsd-hackers =Inbox/freebsd-hardware =Inbox/freebsd-jobs =Inbox/freebsd-pkg =Inbox/freebsd-ports =Inbox/freebsd-python =Inbox/freebsd-questions =Inbox/freebsd-test =Inbox/kde-freebsd =Inbox/Sent =Inbox/Trash =Inbox =Inbox/Spam =Inbox/Drafts =Inbox/Reports =Inbox/kde-bindings
 
-lists freebsd-arm@freebsd.org freebsd-advocacy@freebsd.org freebsd-bluetooth@freebsd.org freebsd-bugs@freebsd.org freebsd-chromium@freebsd.org freebsd-current@freebsd.org freebsd-drivers@freebsd.org freebsd-embedded@freebsd.org freebsd-hackers@freebsd.org freebsd-hardware@freebsd.org freebsd-jobs@freebsd.org freebsd-pkg@freebsd.org freebsd-ports@freebsd.org freebsd-python@freebsd.org freebsd-questions@freebsd.org freebsd-test@freebsd.org kde-freebsd@kde.org
+lists freebsd-arm@freebsd.org freebsd-advocacy@freebsd.org freebsd-bluetooth@freebsd.org freebsd-bugs@freebsd.org freebsd-chromium@freebsd.org freebsd-current@freebsd.org freebsd-drivers@freebsd.org freebsd-embedded@freebsd.org freebsd-hackers@freebsd.org freebsd-hardware@freebsd.org freebsd-jobs@freebsd.org freebsd-pkg@freebsd.org freebsd-ports@freebsd.org freebsd-python@freebsd.org freebsd-questions@freebsd.org freebsd-test@freebsd.org kde-freebsd@kde.org kde-bindings@freebsd.org
 
 save-hook .*arm@freebsd.org =INBOX/freebsd-arm
 save-hook .*advocacy@freebsd.org =INBOX/freebsd-advocacy
