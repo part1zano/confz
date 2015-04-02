@@ -1,10 +1,14 @@
 TYPE="maildir"
 logfile "$HOME/.mailfilter.log"
-
 MAILDIRMAKE="/usr/local/bin/maildirmake"
-SPAMHEADER="X-Spam:"
 DEFAULT="$HOME/Maildir"
 FOLDERS="$DEFAULT/."
+MAILDIR=1
+
+if ( /^From.*@(ello.co|rocketboard.*|facebookmail.com)/ )
+{
+	to $DEFAULT/Spam
+}
 
 if ( /^List-Id:.*<([0-9A-Za-z_\-]+)\.+/ )
 {
@@ -21,10 +25,10 @@ if ( /^List-Id:.*<([0-9A-Za-z_\-]+)\.+/ )
         {
             # notify the user when new folders are created
             NEWFOLDERMSG="$LISTNAME list folder created"
-            `${ECHO} "$NEWFOLDERMSG" | ${MAIL} -s "$NEWFOLDERMSG" $LOGNAME`
+#            `${ECHO} "$NEWFOLDERMSG" | ${MAIL} -s "$NEWFOLDERMSG" $LOGNAME`
         }
     }
-    to ${FOLDERS}$LISTNAME
+    to $DEFAULT/.$LISTNAME
 }
 
 if ( /^X-Spam:/ ) 
@@ -32,7 +36,23 @@ if ( /^X-Spam:/ )
 	to $DEFAULT/Spam
 }
 
-if ( /From.*bugzilla/ ) 
+
+if ( /^From.*bugzilla-noreply@freebsd\.org/ ) 
 {
 	to $DEFAULT/freebsd-bugs
+}
+
+if ( /^From.*smartdesk@lge\.com/ ) 
+{
+	to $DEFAULT/SmartWorld
+}
+
+if ( /^From.*@ulmart.ru/) 
+{
+	to $DEFAULT/Ulmart
+}
+
+if ( /^(From|To):.*root/ )
+{
+	to $DEFAULT/Reports
 }
