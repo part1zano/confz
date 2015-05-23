@@ -170,8 +170,8 @@ case ${firewall_type} in
 			fi
 			${fwcmd} nat 123 config log ${firewall_nat_flags}
 #			${fwcmd} add 50 nat 123 ip4 from any to any via ${firewall_nat_interface}
-			${fwcmd} add 50 nat 123 ip from 172.16.0.0/16 to any out xmit ${firewall_nat_interface}
-			${fwcmd} add 51 nat 123 ip from any to 37.252.124.82 in recv ${firewall_nat_interface}
+			${fwcmd} add 70 nat 123 ip from 172.16.0.0/12 to any out xmit ${firewall_nat_interface}
+			${fwcmd} add 71 nat 123 ip from any to 37.252.124.82 in recv ${firewall_nat_interface}
 		fi
 		;;
 	esac
@@ -185,7 +185,8 @@ esac
 #
 # ${fwcmd} add 65000 pass all from any to any
 
-. /etc/ipfw-table-22.sh
+#. /etc/ipfw-table-22.sh
+${fwcmd} /etc/ipfw-table-22.sh
 
 ${fwcmd} add 22 deny ip from "table(22)" to me
 ${fwcmd} add 23 fwd 172.16.32.33 ip from any to me dst-port 80
@@ -195,7 +196,7 @@ ${fwcmd} add 24 fwd 172.16.32.33 ip from any to me dst-port 443
 #
 case ${firewall_type} in
 [Oo][Pp][Ee][Nn])
-	${fwcmd} add 65000 pass all from any to any
+	${fwcmd} add 65500 allow ip from any to any
 	;;
 
 [Cc][Ll][Ii][Ee][Nn][Tt])
