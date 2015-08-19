@@ -33,7 +33,7 @@ export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
 export PAGER="less"
 alias .="source"
 alias grep='grep --color=auto'
-alias ls="ls -G"
+alias ls="ls -FG"
 
 #case $TERM in
 #xterm*)
