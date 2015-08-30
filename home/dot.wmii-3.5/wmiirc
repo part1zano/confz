@@ -29,8 +29,9 @@ wmiir write /colrules <<!
 wmiir write /tagrules <<!
 /XMMS.*/ -> ~
 /MPlayer.*/ -> ~
-/.*KMail.*/ -> ~+1
-/.*Gajim.*/ -> ~+2
+/.*KMail.*/ -> 2
+/.*Gajim.*/ -> 3
+/.*GIMP.*/ -> 4
 /.*/ -> sel
 /.*/ -> 1
 !
@@ -150,6 +151,10 @@ eventstuff() {
 		wmiir xwrite /tag/sel/ctl send sel down
 	Key $MODKEY-Shift-$UP
 		wmiir xwrite /tag/sel/ctl send sel up
+	Key Print
+		eval scrot '/home/che/pix/screens/%Y-%m-%d_%H%M%S.png' 
+	Key $MODKEY-Print
+		scrot latest.png -e 'gimp $f'
 !
 	for i in 0 1 2 3 4 5 6 7 8 9; do
 		cat <<!
