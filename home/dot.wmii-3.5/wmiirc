@@ -22,22 +22,22 @@ WMII_TERM="konsole"
 
 # Column Rules
 wmiir write /colrules <<!
-/.*/ -> 50+50
+/.*/ -> 58+42
 !
 
 # Tagging Rules
 wmiir write /tagrules <<!
 /XMMS.*/ -> ~
 /MPlayer.*/ -> ~
-/.*KMail.*/ -> 2
-/.*Gajim.*/ -> 3
+/.*KMail.*/ -> ~+1
+/.*Gajim.*/ -> ~+2
 /.*/ -> sel
 /.*/ -> 1
 !
 
 # Status Bar Info
 status() {
-	echo -n $(uptime | sed 's/.*://; s/,//g') '|' $(date +"%a %F %T %Z")
+	echo -n $(uptime | sed 's/.*://; ') '|' $(date +"%a %F %T %Z")
 }
 
 # Event processing
@@ -110,10 +110,6 @@ eventstuff() {
 			wmiir xwrite /keys $MODKEY-Control-t
 			wmiir xwrite /ctl grabmod Mod3;;
 		esac
-	Key XF86AudioRaiseVolume
-		eval mixer vol +5
-	Key XF86AudioLowerVolume
-		eval mixer vol -5
 	Key $MODKEY-space
 		wmiir xwrite /tag/sel/ctl select toggle
 	Key $MODKEY-d
@@ -124,7 +120,7 @@ eventstuff() {
 		wmiir xwrite /tag/sel/ctl colmode sel max
 	Key $MODKEY-a
 		Action $(actionlist | eval $WMII_MENU) &
-	Key $MODKEY-r
+	Key $MODKEY-p
 		sh -c "$(eval $WMII_MENU <$progsfile)" &
 	Key $MODKEY-t
 		wmiir xwrite /ctl "view $(tagsmenu)" &
