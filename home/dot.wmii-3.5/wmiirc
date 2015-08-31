@@ -22,7 +22,7 @@ WMII_TERM="konsole"
 
 # Column Rules
 wmiir write /colrules <<!
-/.*/ -> 58+42
+/.*/ -> 50+50
 !
 
 # Tagging Rules
@@ -30,8 +30,7 @@ wmiir write /tagrules <<!
 /XMMS.*/ -> ~
 /MPlayer.*/ -> ~
 /.*KMail.*/ -> 2
-/.*Gajim.*/ -> 3
-/.*GIMP.*/ -> 4
+/.*GIMP.*/ -> 3
 /.*/ -> sel
 /.*/ -> 1
 !
@@ -111,6 +110,10 @@ eventstuff() {
 			wmiir xwrite /keys $MODKEY-Control-t
 			wmiir xwrite /ctl grabmod Mod3;;
 		esac
+	Key XF86AudioRaiseVolume
+		eval mixer vol +5
+	Key XF86AudioLowerVolume
+		eval mixer vol -5
 	Key $MODKEY-space
 		wmiir xwrite /tag/sel/ctl select toggle
 	Key $MODKEY-d
@@ -121,7 +124,7 @@ eventstuff() {
 		wmiir xwrite /tag/sel/ctl colmode sel max
 	Key $MODKEY-a
 		Action $(actionlist | eval $WMII_MENU) &
-	Key $MODKEY-p
+	Key $MODKEY-r
 		sh -c "$(eval $WMII_MENU <$progsfile)" &
 	Key $MODKEY-t
 		wmiir xwrite /ctl "view $(tagsmenu)" &
