@@ -13,7 +13,8 @@ WMII_NORMCOLORS='#888888 #222222 #333333'
 WMII_FOCUSCOLORS='#ffffff #285577 #4c7899'
 
 WMII_BACKGROUND='#333333'
-WMII_FONT='-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
+#WMII_FONT='-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
+WMII_FONT='-*-droid sans mono-medium-r-*-*-13-*-*-*-*-*-*-*'
 
 set -- $(echo $WMII_NORMCOLORS $WMII_FOCUSCOLORS)
 WMII_MENU="dmenu -b -fn '$WMII_FONT' -nf '$1' -nb '$2' -sf '$4' -sb '$5'"
@@ -27,8 +28,6 @@ wmiir write /colrules <<!
 
 # Tagging Rules
 wmiir write /tagrules <<!
-/XMMS.*/ -> ~
-/MPlayer.*/ -> ~
 /.*KMail.*/ -> 2
 /.*GIMP.*/ -> 3
 /.*/ -> sel
