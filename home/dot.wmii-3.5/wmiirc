@@ -36,7 +36,19 @@ wmiir write /tagrules <<!
 
 # Status Bar Info
 status() {
-	echo -n $(uptime | sed 's/.*://; ') '|' $(date +"%a %F %T %Z")
+	battd=$(sysctl hw.acpi.battery.state | awk '{print $2}')
+	battp=$(sysctl hw.acpi.battery.life | awk '{print $2}')
+	if [ "$battd" -eq "2" ] ; then
+		battstate='c'
+	elif [ "$battd" -eq "1" ] ; then
+		battstate='d'
+	elif [ "$battd" -eq "0" ] ; then
+		battstate='n'
+	else
+		battstate='u'
+	fi
+	echo -n 'Batt:' $battp'%; '$battstate' | '
+	echo -n 'LA:' $(uptime | sed 's/.*://; ') '|' $(date +"%a %F %T %Z")
 }
 
 # Event processing
