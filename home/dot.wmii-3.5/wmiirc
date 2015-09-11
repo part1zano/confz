@@ -47,6 +47,15 @@ status() {
 	else
 		battstate='u'
 	fi
+	
+	kbd=$(xset -q | awk '/LED/ { print $10 }')
+	if [ $kbd -eq 0 ] ; then
+		keyboard='EN'
+	elif [ $kbd -eq 10 ] ; then # XXX :: see the actual value
+		keyboard='RU'
+	fi
+
+	echo -n $keyboard' | '
 	echo -n 'Batt:' $battp'%; '$battstate' | '
 	echo -n 'LA:' $(uptime | sed 's/.*://; ') '|' $(date +"%a %F %T %Z")
 }
