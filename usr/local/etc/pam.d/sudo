@@ -20,8 +20,8 @@
 #
 #auth	sufficient	/usr/local/lib/pam_fprint.so
 auth sufficient /usr/local/lib/pam_ssh_agent_auth.so file=~/.ssh/authorized_keys
-auth include system
-#auth required pam_deny.so
-account include system
-session required pam_permit.so
-password include system
+auth include system # with passwd 
+#auth required pam_deny.so # only agent
+account include system # agent
+session required pam_permit.so # agent
+password include system # with passwd 
