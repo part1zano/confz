@@ -36,16 +36,16 @@ wmiir write /tagrules <<!
 
 # Status Bar Info
 status() {
-	battd=$(sysctl hw.acpi.battery.state | awk '{print $2}')
-	battp=$(sysctl hw.acpi.battery.life | awk '{print $2}')
+	battd=$(sysctl hw.acpi.battery.state | awk '{print $2}')	# battery state
+	battlife=$(sysctl hw.acpi.battery.life | awk '{print $2}')	# battery life %
 	if [ "$battd" -eq "2" ] ; then
-		battstate='c'
+		battstate='c' # charging
 	elif [ "$battd" -eq "1" ] ; then
-		battstate='d'
+		battstate='d' # discharging
 	elif [ "$battd" -eq "0" ] ; then
-		battstate='n'
+		battstate='n' # none of the above
 	else
-		battstate='u'
+		battstate='u' # unknown
 	fi
 	
 	kbd=$(xset -q | awk '/LED/ { print $10 }')
@@ -56,7 +56,7 @@ status() {
 	fi
 
 	echo -n $keyboard' | '
-	echo -n 'Batt:' $battp'%; '$battstate' | '
+	echo -n 'Batt:' $battlife'%; '$battstate' | '
 	echo -n 'LA:' $(uptime | sed 's/.*://; ') '|' $(date +"%a %F %T %Z")
 }
 
