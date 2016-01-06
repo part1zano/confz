@@ -13,26 +13,7 @@ use strict;
 use Irssi;
 
 use vars qw($VERSION %IRSSI);                                                                                 
-
-# config
-eval 
-{
-	require Config::Simple;
-	Config::Simple -> import();
-	my $config = "./iraident.ini";
-	my $cnf = new Config::Simple();
-	$cnf -> read($config);
-	my %cfg = $cnf -> vars();
-	our $ident_name = $cfg{'identification.login'};
-	our $password = $cfg{'identification.password'};
-}
-or do 
-{
-	our $ident_name = 'mr_X';
-	our $password = 'fjfjf';
-};
-
-
+                                                                                                              
 $VERSION = "0.6.1";                                                                                        
 %IRSSI = (                                                                                                    
     authors     => "DonRumata",                                                                 
@@ -46,8 +27,12 @@ $VERSION = "0.6.1";
 );
 
 
-# my $ident_name = "me"; # we read this shti from config
-# my $password   = ""; # we read this shti from config
+my $fnode_name = "freenode-nick";
+my $rusnet_name = "rusnet-nick";
+my $ident_name = ''; # DIRTY
+my $rusnet_passwd   = "freenode-passwd";
+my $fnode_passwd = "rusnet-passwd";
+my $password = ''; # DIRTY
 my $fmt = "MSGLEVEL_CLIENTNOTICES";
 
 sub server_event_catch {
@@ -56,28 +41,35 @@ sub server_event_catch {
     #         "target :text" where target is either your nick or #channel                                 
     # $nick = the nick who sent the message                                                               
     # $host = host of the nick who sent the message
-	our ($ident_name, $password);
+
     my ($server, $text, $nick, $user) = @_;
 
-    if (($nick == 'NickServ') and ($user == 'service@RusNet')){
+    if (($nick eq 'NickServ') and (($user eq 'service@RusNet') or ($user eq 'NickServ@services.'))) {
 	# events:
 	# Nick is registered or protected or not registered
+	
+		if ($user eq 'service@RusNet') {
+			($ident_name, $password) = ($rusnet_name, $rusnet_passwd);
+		}
+		elsif ($user eq 'NickServ@services.') {
+			($ident_name, $password) = ($fnode_name, $fnode_passwd);
+		}
+		if ( $text =~ /lease choose/) { 
+			
+			if ($server->{'nick'} ne $ident_name) {
+				$server->command("NICK $ident_name");
+				Irssi::print("ident string sent...",$fmt);
+#				return;
+			}
 
-	if ( $text =~ /nickname is owned/){ 
-	    
-	    if ($server->{'nick'} ne $ident_name){
-		$server->command("NICK $ident_name");
-		Irssi::print("ident string sent...",$fmt);
-		return;
-	    }
-
-	    return if ($server->{'usermode'} =~ /(r)/);
-	    $server->command("QUOTE NickServ identify $password");
-	    Irssi::print("password sent",$fmt);
+			return if ($server->{'usermode'} =~ /(r)/);
+			
+			$server->command("QUOTE NickServ identify $password");
+			Irssi::print("password sent to $user",$fmt);
 
 #	    $server->command("QUOTE codepage koi8");
 #	    Irssi::print("codepage sent",$fmt);
-	}
+		}
     }    
 }
 
