@@ -49,13 +49,16 @@ status() {
 	fi
 	
 	kbd=$(xset -q | awk '/LED/ { print $10 }')
-	if [ $kbd -eq 0 ] ; then
+	if [ $kbd -lt 9 ] ; then # Russian kbd layout => LED mask += 10
 		keyboard='EN'
-	elif [ $kbd -eq 10 ] ; then # XXX :: see the actual value
+	else 
 		keyboard='RU'
 	fi
 
+	#temp=$(sysctl hw.acpi.thermal.tz0.temperature | awk '{print $2}')
+	
 	echo -n $keyboard' | '
+	#echo -n 'tz0: '$temp' | '
 	echo -n 'Batt:' $battlife'%; '$battstate' | '
 	echo -n 'LA:' $(uptime | sed 's/.*://; ') '|' $(date +"%a %F %T %Z")
 }
