@@ -48,11 +48,14 @@ sub server_event_catch {
 	# events:
 	# Nick is registered or protected or not registered
 	
-		if ($user eq 'service@RusNet') {
+		if ($user eq 'service@RusNet') { # rusnet
 			($ident_name, $password) = ($rusnet_name, $rusnet_passwd);
 		}
-		elsif ($user eq 'NickServ@services.') {
+		elsif ($user eq 'NickServ@services.') { # freenode
 			($ident_name, $password) = ($fnode_name, $fnode_passwd);
+		}
+		else { # something unknown
+			($ident_name, $password) = ("unknown_server", "change the script");
 		}
 		if ( $text =~ /lease choose/) { 
 			
