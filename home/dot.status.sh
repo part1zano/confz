@@ -19,15 +19,16 @@ status() {
 	else # XXX :: see the actual value
 		keyboard='RU'
 	fi
-
-	echo -n $keyboard' | '
-	echo -n 'tz0: '$temp' | '
-	echo -n 'Batt:' $battp'%; '$battstate' | '
-	echo -n $keyboard' | tz0:' $temp '| batt:' $battp'%; '$battstate '| LA:' $(uptime | sed 's/.*://; ') '|' $(date +"%a %F %T %Z")
+#
+#	echo -n $keyboard' | '
+#	echo -n 'tz0: '$temp' | '
+#	echo -n 'Batt:' $battp'%; '$battstate' | '
+	echo -n $keyboard' | tz0:' $temp '| batt: '$battp'%; '$battstate' | LA:' $(uptime | sed 's/.*://; ') '|' $(date +"%a %F %T %Z")
 }
 
-while [ /bin/true ] ; do
-	status
-	echo
-	sleep 5
+
+i3status | while :
+do
+	stat=`status`
+	echo $stat || exit 1
 done
