@@ -95,6 +95,6 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 bar {
-        status_command ~/.status.sh
+        status_command i3status
         tray_output primary
 }
