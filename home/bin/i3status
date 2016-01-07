@@ -31,4 +31,5 @@ i3status | while :
 do
 	stat=`status`
 	echo $stat || exit 1
+	sleep 1
 done
