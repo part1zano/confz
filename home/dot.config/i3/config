@@ -95,9 +95,9 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym Mod1+Shift+r reload
+bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#bindsym Mod1+Shift+r restart
+#bindsym $mod+Shift+r restart
 
 bar {
         status_command ~/.status.sh
@@ -106,3 +106,5 @@ bar {
 			background #222222
 		}
 }
+
+exec feh --bg-center ~/pix/walls/think-correctly.png
