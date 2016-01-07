@@ -42,6 +42,9 @@ bindsym $mod+Print exec scrot latest.png -e 'gimp $f'
 bindsym XF86AudioRaiseVolume exec mixer vol +5
 bindsym XF86AudioLowerVolume exec mixer vol -5
 
+#bindsym $mod+Mod1+l exec i3lock -i /home/che/pix/walls/think-correctly.png
+bindsym $mod+Mod1+l exec i3lock -c 222222
+
 # start dmenu (a program launcher)
 bindsym $mod+r exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -111,7 +114,7 @@ bindsym $mod+Mod1+r restart
 
 bar {
         status_command ~/bin/i3status
-        tray_output primary
+        tray_output all
 		colors {
 			background #222222
 		}
