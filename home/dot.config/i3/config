@@ -34,7 +34,10 @@ floating_modifier $mod
 bindsym $mod+Return exec roxterm
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
+
+bindsym Print exec scrot '/home/che/pix/screens/%Y-%m-%d_%H%M%S.png'
+bindsym $mod+Print exec scrot latest.png -e 'gimp $f'
 
 # start dmenu (a program launcher)
 bindsym $mod+r exec dmenu_run
