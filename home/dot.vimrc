@@ -68,4 +68,4 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
-
+"execute pathogen#infect() " for pathogen, commented out on purpose
