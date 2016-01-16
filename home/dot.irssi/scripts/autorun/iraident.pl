@@ -61,14 +61,14 @@ sub server_event_catch {
 			
 			if ($server->{'nick'} ne $ident_name) {
 				$server->command("NICK $ident_name");
-				Irssi::print("ident string sent...",$fmt);
+				Irssi::print("ident string (as $ident_name) sent...",$fmt);
 #				return;
 			}
 
 			return if ($server->{'usermode'} =~ /(r)/);
 			
 			$server->command("QUOTE NickServ identify $password");
-			Irssi::print("password sent to $user",$fmt);
+			Irssi::print("password for $ident_name sent to $user",$fmt);
 
 #	    $server->command("QUOTE codepage koi8");
 #	    Irssi::print("codepage sent",$fmt);
