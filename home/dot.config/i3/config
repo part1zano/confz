@@ -112,6 +112,8 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Mod1+r restart
 
+for_window [class=".*"] title_format "&#xf10c;    <b>%title</b>"
+
 bar {
         status_command ~/bin/i3status
         tray_output all
