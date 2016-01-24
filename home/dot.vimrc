@@ -68,4 +68,6 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+set incsearch " for more convenient search
+
 "execute pathogen#infect() " for pathogen, commented out on purpose
