@@ -1,14 +1,33 @@
 status() {
+	if [ "$1" == "awesome" ] ; then
+		tz0="&#xf1d1;"
+		wthr="&#xf0c2;"
+		battt="&#xf0e7;"
+		batt_c="&#xf1e6;"
+		batt_d="&#xf242;"
+		batt_n="&#xf240;"
+		batt_u="&#xf05e;"
+		lat="&#xf1fe;"
+	else
+		tz0="tz0"
+		wthr="w"
+		batt_t="batt"
+		batt_c="c"
+		batt_d="d"
+		batt_n="n"
+		batt_u="u"
+		lat="LA"
+	fi
 	battd=$(sysctl hw.acpi.battery.state | awk '{print $2}')
 	battp=$(sysctl hw.acpi.battery.life | awk '{print $2}')
 	if [ "$battd" -eq "2" ] ; then
-		battstate='&#xf1e6;' # charging
+		battstate=$batt_c	# charging
 	elif [ "$battd" -eq "1" ] ; then
-		battstate='&#xf242;' # discharging
+		battstate=$batt_d # discharging
 	elif [ "$battd" -eq "0" ] ; then
-		battstate='&#xf240;' # not charging
+		battstate=$batt_n # not charging
 	else
-		battstate='&#xf05e;' # unknown
+		battstate=$batt_u # unknown
 	fi
 
 	temp=$(sysctl hw.acpi.thermal.tz0.temperature | awk '{print $2}')
@@ -19,23 +38,19 @@ status() {
 	else # XXX :: see the actual value
 		keyboard='RU'
 	fi
-
-	uptime=$(uptime | sed 's/.*://')
-
+	
+	la=$(uptime | sed 's/.*://')
 	date=$(date +"%a %F %T %Z")
+	weather=`~/git/myweather/getweather.py -k ~/git/myweather/api-key`
 
-	weather=$(/home/che/git/myweather/getweather.py -k /home/che/git/myweather/api-key)
-#
-#	echo -n $keyboard' | '
-#	echo -n 'tz0: '$temp' | '
-#	echo -n 'Batt:' $battp'%; '$battstate' | '
-	echo -n $keyboard' | &#xf1d1;:' $temp '| &#xf0c2;:' $weather '| &#xf0e7;: '$battp'%; '$battstate' | &#xf1fe;:' $uptime '|' $date
+#	echo -n $keyboard' | tz0:' $temp '| w: '$weather '| batt: '$battp'%; '$battstate' | LA:' $la '|' $date
+	echo -n $keyboard' |' $tz0 $temp '|' $wthr $weather '|'$batt_t':' $battp'%; '$battstate' | '$lat':' $la '|' $date
 }
 
 
 i3status | while :
 do
-	stat=`status`
+	stat=`status awesome`
 	echo $stat || exit 1
 	sleep 1
 done
