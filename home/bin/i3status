@@ -2,7 +2,7 @@ status() {
 	if [ "$1" == "awesome" ] ; then
 		tz0="&#xf1d1;"
 		wthr="&#xf0c2;"
-		battt="&#xf0e7;"
+		batt_t="&#xf0e7;"
 		batt_c="&#xf1e6;"
 		batt_d="&#xf242;"
 		batt_n="&#xf240;"
@@ -43,8 +43,7 @@ status() {
 	date=$(date +"%a %F %T %Z")
 	weather=`~/git/myweather/getweather.py -k ~/git/myweather/api-key`
 
-#	echo -n $keyboard' | tz0:' $temp '| w: '$weather '| batt: '$battp'%; '$battstate' | LA:' $la '|' $date
-	echo -n $keyboard' |' $tz0 $temp '|' $wthr $weather '|'$batt_t':' $battp'%; '$battstate' | '$lat':' $la '|' $date
+	echo -n "$keyboard | $tz0: $temp | $wthr: $weather | $batt_t : $battp%; $battstate | $lat: $la | $date"
 }
 
 
