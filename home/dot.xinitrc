@@ -9,8 +9,6 @@ xset fp+ /home/che/.fonts/hack
 xset fp+ /home/che/.fonts/font-awesome
 xset fp rehash
 
-eval `ssh-agent`
 
-exec i3
+exec ssh-agent i3
 
-ssh-agent -k
