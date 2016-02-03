@@ -116,7 +116,7 @@ for_window [class=".*"] title_format "&#xf10c;    <b>%title</b>"
 
 bar {
         status_command ~/bin/i3status
-        tray_output all
+        tray_output primary
 		colors {
 			background #222222
 		}
