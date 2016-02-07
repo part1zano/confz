@@ -112,7 +112,12 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Mod1+r restart
 
+bindsym $mod+b border normal 4
+
 for_window [class=".*"] title_format "&#xf10c;    <b>%title</b>"
+
+#new_window normal 4
+new_float normal 4
 
 bar {
         status_command ~/bin/i3status
