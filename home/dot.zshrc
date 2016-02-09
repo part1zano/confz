@@ -48,6 +48,11 @@ alias ls="ls -FG"
 #esac
 
 # *** key bindings section *** #
+# next lines bind ctrl+{left,right}
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^[^[[D' emacs-backward-word
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word
 # next lines bind history search similar to tcsh
 bindkey "$(echotc up)" history-beginning-search-backward
 bindkey "$(echotc kd)" history-beginning-search-forward
