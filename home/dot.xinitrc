@@ -9,7 +9,7 @@ xset fp+ /home/che/.fonts/hack
 xset fp+ /home/che/.fonts/font-awesome
 xset fp rehash
 
-xidle -timeout 60 -program "i3lock -c 222222"
+xidle -timeout 60 -program "/usr/local/bin/i3lock -c 222222"
 
 exec ssh-agent i3
 
