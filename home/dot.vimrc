@@ -19,7 +19,7 @@ set list lcs=tab:\|\ " for indent stick
 set whichwrap+=<,>,h,l,[,]
 
 if (has("gui_running"))
-	set cursorline "that grey thing at cursor
+	set cursorline " that grey thing at cursor
 endif
 
 if (has("gui_running"))
@@ -33,9 +33,9 @@ endif
 set laststatus=2 " needed
 set termencoding=utf-8 " x3, maybe not needed
 
-"filetype plugin indent on
-"set grepprg=grep\ -nH\ $*
-"let g:tex_flavor = "latex"
+" filetype plugin indent on
+" set grepprg=grep\ -nH\ $*
+" let g:tex_flavor = "latex"
 
 
 " More suitable mapping
@@ -70,4 +70,4 @@ set undoreload=10000
 
 set incsearch " for more convenient search
 
-"execute pathogen#infect() " for pathogen, commented out on purpose
+" execute pathogen#infect() " for pathogen, commented out on purpose
