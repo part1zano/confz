@@ -33,6 +33,14 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec roxterm
 
+
+# screen rotation (set LVDS1 to the appropriate output)
+bindsym $mod+Ctrl+j exec xrandr --output LVDS1 --rotate normal
+bindsym $mod+Ctrl+l exec xrandr --output LVDS1 --rotate left
+bindsym $mod+Ctrl+h exec xrandr --output LVDS1 --rotate right
+bindsym $mod+Ctrl+k exec xrandr --output LVDS1 --rotate inverted
+
+
 # kill focused window
 bindsym $mod+q kill
 
