@@ -20,16 +20,17 @@ set whichwrap+=<,>,h,l,[,]
 
 if (has("gui_running"))
 	set cursorline " that grey thing at cursor
+	set guifont=Droid\ Sans\ Mono " a nice monospace font
+	colorscheme molokai " colorscheme ideal for gui mode
+else
+	colorscheme Monokai " like the one before, but for non-gui mode
 endif
 
-if (has("gui_running"))
-	set guifont=Droid\ Sans\ Mono " a nice monospace font
-endif
 
 " powerline
-if (has("gui_running")) " for gvim
+" if (has("gui_running")) " for gvim
 	let g:Powerline_symbols='fancy'
-endif
+" endif
 set laststatus=2 " needed
 set termencoding=utf-8 " x3, maybe not needed
 
