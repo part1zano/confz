@@ -123,12 +123,12 @@ autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 zstyle -e :urlglobber url-other-schema '[[ $__remote_commands[(i)$words[1]] -le ${#__remote_commands} ]] && reply=("*") || reply=(http https ftp)'
 
-# ssh-agent-related
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-	ssh-agent > ~/.ssh-agent.zsh
-	. ~/.ssh-agent.zsh
-	rm ~/.ssh-agent.zsh
-	ssh-add
-else
-	echo "won't start new ssh-agent"
-fi
+# ssh-agent-related :: not needed!
+# if [ -z "$SSH_AUTH_SOCK" ] ; then
+# 	ssh-agent > ~/.ssh-agent.zsh
+# 	. ~/.ssh-agent.zsh
+# 	rm ~/.ssh-agent.zsh
+# 	ssh-add
+# else
+# 	echo "won't start new ssh-agent"
+# fi
