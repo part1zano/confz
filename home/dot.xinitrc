@@ -7,6 +7,10 @@ xset fp+ /home/che/.fonts/consolas
 xset fp+ /home/che/.fonts/inconsolata
 xset fp+ /home/che/.fonts/hack
 xset fp+ /home/che/.fonts/font-awesome
+xset fp+ /home/che/.fonts/PTMono
+xset fp+ /home/che/.fonts/PTSans
+xset fp+ /home/che/.fonts/PTSerif
+
 xset fp rehash
 
 xidle -timeout 300 -program "/usr/local/bin/i3lock -c 222222" &
