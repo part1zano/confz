@@ -10,6 +10,7 @@ xset fp+ /home/che/.fonts/font-awesome
 xset fp+ /home/che/.fonts/PTMono
 xset fp+ /home/che/.fonts/PTSans
 xset fp+ /home/che/.fonts/PTSerif
+xset fp+ /home/che/.fonts/Impact
 
 xset fp rehash
 
