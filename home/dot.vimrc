@@ -20,7 +20,8 @@ set whichwrap+=<,>,h,l,[,]
 
 if (has("gui_running"))
 	set cursorline " that grey thing at cursor
-	set guifont=Droid\ Sans\ Mono " a nice monospace font
+	" set guifont=Droid\ Sans\ Mono " a nice monospace font
+	set guifont=Input\ 10
 	colorscheme molokai " colorscheme ideal for gui mode
 else
 	colorscheme Monokai " like the one before, but for non-gui mode
