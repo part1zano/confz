@@ -11,7 +11,7 @@ xset fp+ /home/che/.fonts/PTMono
 xset fp+ /home/che/.fonts/PTSans
 xset fp+ /home/che/.fonts/PTSerif
 xset fp+ /home/che/.fonts/Impact
-xset fp+ /home/che/.fonts/input-light
+xset fp+ /home/che/.fonts/input-lightest
 
 xset fp rehash
 
