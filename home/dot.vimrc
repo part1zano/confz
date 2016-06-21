@@ -73,3 +73,8 @@ set undoreload=10000
 set incsearch " for more convenient search
 
 " execute pathogen#infect() " for pathogen, commented out on purpose
+
+let g:clighter_libclang_file='/usr/local/llvm38/lib/libclang.so.3.8'
+
+call SMap("<C-x>r", ":call clighter#Rename()<cr>")
+let g:jedi#rename_command='<C-x>R'
