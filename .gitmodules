@@ -1,0 +1,6 @@
+[submodule "home/dot.vim/bundle/jedi-vim"]
+	path = home/dot.vim/bundle/jedi-vim
+	url = git@github.com:davidhalter/jedi-vim.git
+[submodule "home/dot.vim/bundle/pyflakes-vim"]
+	path = home/dot.vim/bundle/pyflakes-vim
+	url = git@github.com:kevinw/pyflakes-vim.git
