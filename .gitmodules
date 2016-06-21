@@ -7,3 +7,6 @@
 [submodule "home/dot.vim/bundle/clighter"]
 	path = home/dot.vim/bundle/clighter
 	url = git@github.com:bbchung/clighter.git
+[submodule "home/dot.vim/bundle/vim-multiple-cursors"]
+	path = home/dot.vim/bundle/vim-multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git
