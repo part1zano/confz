@@ -1,7 +1,7 @@
 ifconfig_fxp0="up"
 ifconfig_urtwn0="ether 00:00:f0:84:aa:15"
 wlans_urtwn0="wlan0"
-ifconfig_wlan0="WPA"
+ifconfig_wlan0="-ht WPA"
 cloned_interfaces="lagg0"
 ifconfig_lagg0="laggproto failover laggport fxp0 laggport wlan0 DHCP"
 
