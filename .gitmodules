@@ -10,3 +10,6 @@
 [submodule "home/dot.vim/bundle/vim-multiple-cursors"]
 	path = home/dot.vim/bundle/vim-multiple-cursors
 	url = git@github.com:terryma/vim-multiple-cursors.git
+[submodule "home/dot.vim/bundle/vim-flake8"]
+	path = home/dot.vim/bundle/vim-flake8
+	url = git@github.com:nvie/vim-flake8.git
