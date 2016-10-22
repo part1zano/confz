@@ -13,3 +13,6 @@
 [submodule "home/dot.vim/bundle/vim-flake8"]
 	path = home/dot.vim/bundle/vim-flake8
 	url = git@github.com:nvie/vim-flake8.git
+[submodule "home/dot.vim/bundle/clighter8"]
+	path = home/dot.vim/bundle/clighter8
+	url = git@github.com:bbchung/clighter8.git
