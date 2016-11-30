@@ -16,3 +16,6 @@
 [submodule "home/dot.vim/bundle/auto-pairs"]
 	path = home/dot.vim/bundle/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule "home/dot.vim/bundle/clighter8"]
+	path = home/dot.vim/bundle/clighter8
+	url = git@github.com:bbchung/clighter8.git
