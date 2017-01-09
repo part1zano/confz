@@ -74,6 +74,9 @@ set incsearch " for more convenient search
 
 " execute pathogen#infect() " for pathogen, commented out on purpose
 
+autocmd FileType c setlocal commentstring=//\ %s
+autocmd FileType cpp setlocal commentstring=//\ %s
+
 let g:clighter_libclang_file='/usr/local/llvm38/lib/libclang.so.3.8'
 
 call SMap("<C-x>r", ":call clighter#Rename()<cr>")
