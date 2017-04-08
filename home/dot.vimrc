@@ -76,8 +76,9 @@ set incsearch " for more convenient search
 
 autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType cpp setlocal commentstring=//\ %s
+autocmd FileType cmake setlocal commentstring=#\ %s
 
-let g:clighter_libclang_file='/usr/local/llvm38/lib/libclang.so.3.8'
+" let g:clighter_libclang_file='/usr/local/llvm38/lib/libclang.so.3.8'
 
-call SMap("<C-x>r", ":call clighter#Rename()<cr>")
+" call SMap("<C-x>r", ":call clighter#Rename()<cr>")
 let g:jedi#rename_command='<C-x>R'
