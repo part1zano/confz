@@ -16,3 +16,6 @@
 [submodule "home/dot.vim/bundle/clighter8"]
 	path = home/dot.vim/bundle/clighter8
 	url = git@github.com:bbchung/clighter8.git
+[submodule "home/dot.vim/bundle/jedi-vim"]
+	path = home/dot.vim/bundle/jedi-vim
+	url = git@github.com:davidhalter/jedi-vim.git
