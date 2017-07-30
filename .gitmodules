@@ -19,3 +19,6 @@
 [submodule "home/dot.vim/bundle/jedi-vim"]
 	path = home/dot.vim/bundle/jedi-vim
 	url = git@github.com:davidhalter/jedi-vim.git
+[submodule "home/dot.vim/bundle/python-mode"]
+	path = home/dot.vim/bundle/python-mode
+	url = git@github.com:python-mode/python-mode.git
