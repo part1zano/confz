@@ -1,0 +1,2 @@
+auth	sufficient	/usr/local/lib/pam_ldap.so no_warn
+account	required	/usr/local/lib/pam_ldap.so no_warn
