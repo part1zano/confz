@@ -25,3 +25,6 @@
 [submodule "home/dot.vim/bundle/nerdtree"]
 	path = home/dot.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "home/dot.vim/bundle/ale"]
+	path = home/dot.vim/bundle/ale
+	url = https://github.com/w0rp/ale.git
