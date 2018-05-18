@@ -1,6 +1,3 @@
-[submodule "home/dot.vim/bundle/pyflakes-vim"]
-	path = home/dot.vim/bundle/pyflakes-vim
-	url = git@github.com:kevinw/pyflakes-vim.git
 [submodule "home/dot.vim/bundle/clighter"]
 	path = home/dot.vim/bundle/clighter
 	url = git@github.com:bbchung/clighter.git
