@@ -25,3 +25,18 @@
 [submodule "home/dot.vim/bundle/ale"]
 	path = home/dot.vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "home/dot.vim/bundle/vim-airline"]
+	path = home/dot.vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "home/dot.vim/bundle/vim-extradite"]
+	path = home/dot.vim/bundle/vim-extradite
+	url = https://github.com/int3/vim-extradite.git
+[submodule "home/dot.vim/bundle/vim-commentary"]
+	path = home/dot.vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "home/dot.vim/bundle/vim-fugitive"]
+	path = home/dot.vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "home/dot.vim/bundle/indentLine"]
+	path = home/dot.vim/bundle/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
