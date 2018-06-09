@@ -14,7 +14,7 @@ set clipboard=unnamed
 set ignorecase
 set smartcase
 
-set list lcs=tab:\|\ " for indent stick 
+set list lcs=tab:\|\ " for indent stick
 " for eol override
 set whichwrap+=<,>,h,l,[,]
 
@@ -27,13 +27,8 @@ else
 	colorscheme Monokai " like the one before, but for non-gui mode
 endif
 
-
-" powerline
-" if (has("gui_running")) " for gvim
-	let g:Powerline_symbols='fancy'
-" endif
-set laststatus=2 " needed
-set termencoding=utf-8 " x3, maybe not needed
+" airline
+let g:airline_powerline_fonts = 1
 
 " filetype plugin indent on
 " set grepprg=grep\ -nH\ $*
@@ -42,22 +37,22 @@ set termencoding=utf-8 " x3, maybe not needed
 
 " More suitable mapping
 function! SMap(key, action, ...)
-    let modes = " vi"
-    if (a:0 > 0)
-        let modes = a:{1}
-    endif
-    if (match(modes, '\Ii') != -1)
-        execute 'imap ' . a:key . ' <Esc>' . a:action
-    endif
-    if (match(modes, '\Nn') != -1)
-        execute 'nmap ' . a:key . ' <Esc>' . a:action
-    endif
-    if (match(modes, ' ') != -1)
-        execute 'map ' . a:key . ' <Esc>' . a:action
-    endif
-    if (match(modes, '\Vv') != -1)
-        execute 'vmap ' . a:key . ' <Esc>' . a:action
-    endif
+	let modes = " vi"
+	if (a:0 > 0)
+		let modes = a:{1}
+	endif
+	if (match(modes, '\Ii') != -1)
+		execute 'imap ' . a:key . ' <Esc>' . a:action
+	endif
+	if (match(modes, '\Nn') != -1)
+		execute 'nmap ' . a:key . ' <Esc>' . a:action
+	endif
+	if (match(modes, ' ') != -1)
+		execute 'map ' . a:key . ' <Esc>' . a:action
+	endif
+	if (match(modes, '\Vv') != -1)
+		execute 'vmap ' . a:key . ' <Esc>' . a:action
+	endif
 endfunction
 
 
