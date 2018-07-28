@@ -28,7 +28,9 @@ else
 endif
 
 " airline
-let g:airline_powerline_fonts = 1
+if (has("gui_running"))
+	let g:airline_powerline_fonts = 1
+endif
 
 " filetype plugin indent on
 " set grepprg=grep\ -nH\ $*
@@ -77,3 +79,7 @@ autocmd FileType cmake setlocal commentstring=#\ %s
 
 " call SMap("<C-x>r", ":call clighter#Rename()<cr>")
 let g:jedi#rename_command='<C-x>R'
+
+" ale
+let g:ale_c_clang_options='-I/usr/local/include'
+let g:ale_cpp_clang_options='-I/usr/local/include'
