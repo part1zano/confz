@@ -40,3 +40,6 @@
 [submodule "home/dot.vim/bundle/indentLine"]
 	path = home/dot.vim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule "home/dot.vim/bundle/clang_complete"]
+	path = home/dot.vim/bundle/clang_complete
+	url = https://github.com/Rip-Rip/clang_complete.git
