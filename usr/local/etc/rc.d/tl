@@ -9,8 +9,8 @@ rcvar="tl_enable"
 
 load_rc_config $name
 : ${tl_enable:=no}
-: ${tl_db:="/var/db/tl.db"}
-: ${tl_host:=""}
+: ${tl_db:="/var/db/tl/tl.db"}
+: ${tl_host:="localhost"}
 : ${tl_port:="1337"}
 : ${tl_basename:="tl"}
 : ${tl_path:="/usr/home/che/go/bin"}
