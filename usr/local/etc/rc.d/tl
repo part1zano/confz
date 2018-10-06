@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDES: TL
+
+. /etc/rc.subr
+
+name="tl"
+rcvar="tl_enable"
+start_cmd="tlstart"
+stop_cmd="tlstop"
+ECHO="/bin/echo"
+PGREP="/bin/pgrep"
+TL="/home/che/go/bin/tl"
+
+load_rc_config $name
+: ${tl_enable:=no}
+: ${tl_pidfile:="/var/run/tl.pid"}
+: ${tl_db:="/var/db/tl.db"}
+: ${tl_port:="1337"}
+: ${tl_basename:="tl"}
+
+
+tlstart()
+{
+	$TL -http $tl_port -db $tl_db &
+	$PGREP "$tl_basename" > $tl_pid
+}
+
+tlstop()
+{
+	/bin/cat $tl_pid | /usr/bin/xargs kill
+}
+
+run_rc_command "$1"
