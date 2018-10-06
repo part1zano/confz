@@ -9,15 +9,15 @@ rcvar="tl_enable"
 
 load_rc_config $name
 : ${tl_enable:=no}
-: ${tl_pidfile:="/var/run/tl.pid"}
 : ${tl_db:="/var/db/tl.db"}
 : ${tl_host:=""}
 : ${tl_port:="1337"}
 : ${tl_basename:="tl"}
 : ${tl_path:="/usr/home/che/go/bin"}
+: ${tl_user:="nobody"}
+: ${tl_group:="nogroup"}
 
 tl_flags="-http $tl_host:$tl_port -db $tl_db &"
-pidfile=$tl_pid
 command="${tl_path}/${tl_basename}"
 
 run_rc_command "$1"
