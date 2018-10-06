@@ -6,11 +6,6 @@
 
 name="tl"
 rcvar="tl_enable"
-start_cmd="tlstart"
-stop_cmd="tlstop"
-ECHO="/bin/echo"
-PGREP="/bin/pgrep"
-# TL="/home/che/go/bin/tl"
 
 load_rc_config $name
 : ${tl_enable:=no}
@@ -21,16 +16,8 @@ load_rc_config $name
 : ${tl_basename:="tl"}
 : ${tl_path:="/usr/home/che/go/bin"}
 
-command="${tl_path}/${tl_basename} -http ${tl_host}:${tl_port} -db ${tl_db}"
-# tlstart()
-# {
-# 	$TL -http $tl_port -db $tl_db &
-# 	$PGREP "$tl_basename" > $tl_pid
-# }
-
-# tlstop()
-# {
-# 	/bin/cat $tl_pid | /usr/bin/xargs kill
-# }
+tl_flags="-http $tl_host:$tl_port -db $tl_db &"
+pidfile=$tl_pid
+command="${tl_path}/${tl_basename}"
 
 run_rc_command "$1"
