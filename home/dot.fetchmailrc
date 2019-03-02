@@ -1,0 +1,10 @@
+set daemon 20
+
+poll {{host}} proto IMAP
+  user "{{user}}" password "{{password}}""
+  smtphost "{{host}}"
+  ssl
+  keep
+  no rewrite
+  mda "/usr/local/bin/maildrop -d {{user}}"
+
