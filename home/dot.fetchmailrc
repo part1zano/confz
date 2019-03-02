@@ -1,7 +1,7 @@
 set daemon 20
 
 poll {{host}} proto IMAP
-  user "{{user}}" password "{{password}}""
+  user "{{user}}" password "{{password}}"
   smtphost "{{host}}"
   ssl
   keep
