@@ -69,7 +69,8 @@ set undoreload=10000
 
 set incsearch " for more convenient search
 
-" execute pathogen#infect() " for pathogen, commented out on purpose
+" for pathogen, commented out on purpose
+" execute pathogen#infect()
 
 autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType cpp setlocal commentstring=//\ %s
