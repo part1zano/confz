@@ -7,7 +7,7 @@ MAILDIR=1
 
 if ( /^From.*@(ello.co|rocketboard.*|facebookmail.com)/ )
 {
-	to $DEFAULT/Spam
+	to $DEFAULT/.Spam
 }
 
 if ( /^List-Id:.*<([0-9A-Za-z_\-]+)\.+/ )
@@ -33,26 +33,26 @@ if ( /^List-Id:.*<([0-9A-Za-z_\-]+)\.+/ )
 
 if ( /^X-Spam:/ ) 
 {
-	to $DEFAULT/Spam
+	to $DEFAULT/.Spam
 }
 
 
 if ( /^From.*bugzilla-noreply@freebsd\.org/ ) 
 {
-	to $DEFAULT/freebsd-bugs
+	to $DEFAULT/.freebsd-bugs
 }
 
 if ( /^From.*smartdesk@lge\.com/ ) 
 {
-	to $DEFAULT/SmartWorld
+	to $DEFAULT/.SmartWorld
 }
 
 if ( /^From.*@ulmart.ru/) 
 {
-	to $DEFAULT/Ulmart
+	to $DEFAULT/.Ulmart
 }
 
 if ( /^(From|To):.*root/ )
 {
-	to $DEFAULT/Reports
+	to $DEFAULT/.Reports
 }
