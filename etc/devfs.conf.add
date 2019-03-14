@@ -1,2 +1,2 @@
-perm	vboxnetctl	0666
+perm	vboxnetctl	0660
 own		vboxnetctl	root:vboxusers
