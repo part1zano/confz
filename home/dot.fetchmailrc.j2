@@ -1,10 +1,10 @@
 set daemon 20
 
-poll {{imaphost}} proto IMAP
-  user "{{imapuser}}" password "{{imappassword}}"
-  smtphost "{{smtphost}}"
+poll {{ imaphost }} proto IMAP
+  user "{{ imapuser }}" password "{{ imappassword }}"
+  smtphost "{{ smtphost }}"
   ssl
   keep
   no rewrite
-  mda "/usr/local/bin/maildrop -d {{localuser}}"
+  mda "/usr/local/bin/maildrop -d {{ localuser }}"
 
