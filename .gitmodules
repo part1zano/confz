@@ -7,9 +7,6 @@
 [submodule "home/dot.vim/bundle/vim-airline"]
 	path = home/dot.vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
-[submodule "home/dot.vim/bundle/vim-extradite"]
-	path = home/dot.vim/bundle/vim-extradite
-	url = https://github.com/int3/vim-extradite.git
 [submodule "home/dot.vim/bundle/vim-commentary"]
 	path = home/dot.vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
