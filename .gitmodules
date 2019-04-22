@@ -28,3 +28,6 @@
 [submodule "home/dot.vim/bundle/vim-multiple-cursors"]
 	path = home/dot.vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "home/dot.vim/bundle/vim-extradite"]
+	path = home/dot.vim/bundle/vim-extradite
+	url = https://github.com/part1zano/vim-extradite.git
