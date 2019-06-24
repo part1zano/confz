@@ -9,7 +9,7 @@ filetype plugin on
 set smartindent
 set tabstop=4 "for compatibility
 set shiftwidth=4 "same as above
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set ignorecase
 set smartcase
