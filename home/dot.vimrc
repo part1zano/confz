@@ -84,3 +84,15 @@ let g:jedi#rename_command='<C-x>R'
 " ale
 let g:ale_c_clang_options='-I/usr/local/include'
 let g:ale_cpp_clang_options='-I/usr/local/include'
+
+" the following is just an example
+"
+" function Tabstop()
+" 	set expandtab
+" 	set shiftwidth=4
+" 	set tabstop=4
+" 	set softtabstop=4
+" endfunction
+
+" autocmd filetype c call Tabstop()
+" autocmd filetype cpp call Tabstop()
