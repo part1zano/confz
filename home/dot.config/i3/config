@@ -46,7 +46,6 @@ bindsym $mod+q kill
 
 bindsym Print exec scrot '/home/che/pix/screens/%Y-%m-%d_%H%M%S.png'
 bindsym $mod+Print exec scrot latest.png -e 'gimp $f'
-bindsym --release $mod+Shift+e exec scrot -sf '/home/che/pix/screens/%Y-%m-%d_%H%M%S.png'
 
 bindsym XF86AudioRaiseVolume exec mixer vol +5
 bindsym XF86AudioLowerVolume exec mixer vol -5
