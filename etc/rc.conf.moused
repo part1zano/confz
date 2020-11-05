@@ -1,2 +1,2 @@
 moused_enable="YES"
-moused_flags="-VH"
+moused_flags="-VH -A 1.4"
