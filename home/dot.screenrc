@@ -14,6 +14,8 @@ bind f eval "hardstatus ignore"
 # Show hardstatus: ctrl-a F
 bind F eval "hardstatus alwayslastline"
 
+bind , eval "title"
+
 screen 0
 screen -t mutt 1
 screen -t htop 2 htop
