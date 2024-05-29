@@ -16,9 +16,6 @@
 [submodule "home/dot.vim/bundle/indentLine"]
 	path = home/dot.vim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-[submodule "home/dot.vim/bundle/clang_complete"]
-	path = home/dot.vim/bundle/clang_complete
-	url = https://github.com/Rip-Rip/clang_complete.git
 [submodule "home/dot.vim/bundle/auto-pairs"]
 	path = home/dot.vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
@@ -28,9 +25,6 @@
 [submodule "home/dot.vim/bundle/vim-multiple-cursors"]
 	path = home/dot.vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
-[submodule "home/dot.vim/bundle/vim-extradite"]
-	path = home/dot.vim/bundle/vim-extradite
-	url = https://github.com/part1zano/vim-extradite.git
 [submodule "home/dot.vim/bundle/vim-lsp"]
 	path = home/dot.vim/bundle/vim-lsp
 	url = git@github.com:prabirshrestha/vim-lsp.git
