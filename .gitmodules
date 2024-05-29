@@ -31,3 +31,6 @@
 [submodule "home/dot.vim/bundle/vim-extradite"]
 	path = home/dot.vim/bundle/vim-extradite
 	url = https://github.com/part1zano/vim-extradite.git
+[submodule "home/dot.vim/bundle/vim-lsp"]
+	path = home/dot.vim/bundle/vim-lsp
+	url = git@github.com:prabirshrestha/vim-lsp.git
