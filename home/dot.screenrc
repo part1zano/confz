@@ -18,8 +18,6 @@ bind , eval "title"
 
 screen 0
 screen -t mutt 1
-screen -t htop 2 htop
-screen -t irssi 3 irssi -c irc.anarxi.st -p 7770 -n part1zan_
 screen -t mikrotik 4
 screen -t serial 5
 screen -t shell 6
