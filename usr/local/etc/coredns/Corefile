@@ -1,0 +1,18 @@
+. {
+	forward . 192.168.88.1
+	log
+	acl {
+		allow net 127.0.0.0/8
+		allow net 192.168.88.0/24
+		allow net 10.0.200.0/24
+		allow net 10.0.0.0/24
+		block net 0.0.0.0/0
+
+		allow net 2a05:3580:c805::/64
+		allow net 2a05:3580:c805:b0::64
+		allow net ::1
+		block net ::/0
+	}
+
+	cache 10
+}
