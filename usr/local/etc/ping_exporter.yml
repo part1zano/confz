@@ -1,0 +1,20 @@
+targets:
+  - ya.ru
+  - bein.link
+  - router
+  - xrouter
+  - ap
+  - switch
+  - qnap01
+  - xeon
+  - 80.249.144.159
+
+dns:
+  refresh: 2m15s
+  nameserver: 192.168.88.156
+
+ping:
+  interval: 2s
+  timeout: 3s
+  history-size: 42
+  payload-size: 120
